@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.76.0'
+project:
+    name: GitHub-MuseLab-DX2
+    package:
+        name: GitHub MuseLab DX2
+        
+        api_version: '58.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+    
+      
+
+tasks:
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
+
+orgs:
+    scratch:
+
+        dev:
+            config_file: orgs/unmanaged.json
+        feature:
+            config_file: orgs/unmanaged.json
+        qa:
+            config_file: orgs/unmanaged.json
+
