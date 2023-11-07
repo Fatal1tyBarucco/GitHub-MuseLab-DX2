@@ -24,7 +24,7 @@
     "@salesforce/sfdx-lwc-jest": "^3.0.1",
     "eslint": "^8.11.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^26.1.2",
+    "eslint-plugin-jest": "^27.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "prettier": "^2.6.0",
