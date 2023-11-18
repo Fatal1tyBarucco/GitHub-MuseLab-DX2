@@ -21,7 +21,9 @@
         "ghcr.io/devcontainers/features/java:1": {}
     },
     "remoteEnv": {
-        "DEV_HUB_AUTH_URL": "${localEnv:DEV_HUB_AUTH_URL}"},
+        "DEV_HUB_AUTH_URL": "${localEnv:DEV_HUB_AUTH_URL}",
+        "CCI_GITHUB_TOKEN": "${localEnv:CCI_GITHUB_TOKEN}"
+    },
     "secrets": {
         "DEV_HUB_AUTH_URL": {
             "description": "An sfdxAuthUrl to log into the Dev Hub org with permissions for scratch org creation",
