@@ -11,7 +11,6 @@
             "extensions": [
                 "salesforce.salesforcedx-vscode",
                 "CumulusCI.cci",
-                "GitHub.copilot",
                 "robocorp.robotframework-lsp",
                 "ms-python.python"
             ]
