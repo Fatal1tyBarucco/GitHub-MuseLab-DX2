@@ -20,9 +20,9 @@ orgs:
     scratch:
 
         dev:
-            config_file: orgs/unmanaged.json
+            config_file: orgs/managed.json
         feature:
-            config_file: orgs/unmanaged.json
+            config_file: orgs/managed.json
         qa:
-            config_file: orgs/unmanaged.json
+            config_file: orgs/managed.json
 
