@@ -5,7 +5,7 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-17-openjdk",
+                "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
                 "terminal.integrated.shell.linux": "/bin/bash"
             },
             "extensions": [
