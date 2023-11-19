@@ -5,6 +5,7 @@
             "default": true
         }
     ],
-    "namespace": "",
+    "namespace": "Fatal1ty",
+    "sfdcLoginUrl": "https://cunning-koala-g931cs-dev-ed.trailblaze.my.salesforce.com",
     "sourceApiVersion": "58.0"
 }
