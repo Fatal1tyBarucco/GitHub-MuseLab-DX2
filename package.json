@@ -1,6 +1,6 @@
 {
   "name": "github-muselab-dx2",
-  "private": false,
+  "private": true,
   "version": "1.0.0",
   "description": "GitHub MuseLab DX2",
   "scripts": {
