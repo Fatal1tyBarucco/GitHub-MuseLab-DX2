@@ -4,7 +4,7 @@
         { "path" : "src" }
     ],
     "pushPackageDirectoriesSequentially": true,
-    "namespace": "Fatal1ty",
-    "sfdcLoginUrl": "https://cunning-koala-g931cs-dev-ed.trailblaze.my.salesforce.com",
+    "namespace": "",
+    "sfdcLoginUrl": "https://resilient-narwhal-lc36xd-dev-ed.trailblaze.my.salesforce.com/",
     "sourceApiVersion": "59.0"
 }
