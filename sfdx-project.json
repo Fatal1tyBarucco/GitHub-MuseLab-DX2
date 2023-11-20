@@ -1,10 +1,9 @@
 {
     "packageDirectories": [
-        {
-            "path": "force-app",
-            "default": true
-        }
+        { "path": "force-app", "default": true}, 
+        { "path" : "src" }
     ],
+    "pushPackageDirectoriesSequentially": true,
     "namespace": "Fatal1ty",
     "sfdcLoginUrl": "https://cunning-koala-g931cs-dev-ed.trailblaze.my.salesforce.com",
     "sourceApiVersion": "59.0"
