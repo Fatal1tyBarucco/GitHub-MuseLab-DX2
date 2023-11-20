@@ -1,28 +1,25 @@
-minimum_cumulusci_version: '3.76.0'
+minimum_cumulusci_version: '3.81.0'
 project:
     name: GitHub-MuseLab-DX2
     package:
-        name: GitHub MuseLab DX2
-        
-        api_version: '58.0'
+        name: GitHub-MuseLab-DX2
+        namespace: Fatal1ty
+        api_version: '59.0'
     git:
         default_branch: 'main'
-    source_format: sfdx
-    
-      
 
 tasks:
+    robot:
+        options:
+            suites: robot/GitHub-MuseLab-DX2/tests
+            options:
+                outputdir: robot/GitHub-MuseLab-DX2/results
+
+    robot_testdoc:
+        options:
+            path: robot/GitHub-MuseLab-DX2/tests
+            output: robot/GitHub-MuseLab-DX2/doc/GitHub-MuseLab-DX2_tests.html
+
     run_tests:
         options:
             required_org_code_coverage_percent: 75
-
-orgs:
-    scratch:
-
-        dev:
-            config_file: orgs/managed.json
-        feature:
-            config_file: orgs/managed.json
-        qa:
-            config_file: orgs/managed.json
-

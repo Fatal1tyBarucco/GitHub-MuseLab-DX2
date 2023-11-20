@@ -5,7 +5,7 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+                "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-17-openjdk",
                 "terminal.integrated.shell.linux": "/bin/bash"
             },
             "extensions": [
@@ -17,8 +17,8 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/java:1": {}
-    },
+        "ghcr.io/devcontainers/features/java:1.2.2": {}
+    },      
     "remoteEnv": {
         "DEV_HUB_AUTH_URL": "${localEnv:DEV_HUB_AUTH_URL}",
         "CCI_GITHUB_TOKEN": "${localEnv:CCI_GITHUB_TOKEN}"
