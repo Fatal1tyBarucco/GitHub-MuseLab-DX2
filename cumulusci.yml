@@ -23,3 +23,23 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+orgs:
+    scratch:
+        dev_namespaced:
+            config_file: orgs/dev.json
+            days: 7
+            namespaced: True
+        dev:
+            config_file: orgs/dev.json
+        feature:
+            config_file: orgs/feature.json
+        qa:
+            config_file: orgs/qa.json
+        beta:
+            config_file: orgs/beta.json
+        release:
+            config_file: orgs/release.json
+        managed:
+            config_file: orgs/managed.json
+        unmanaged:
+            config_file: orgs/unmanaged.json

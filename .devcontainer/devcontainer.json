@@ -9,11 +9,12 @@
                 "terminal.integrated.shell.linux": "/bin/bash"
             },
             "extensions": [
-                "salesforce.salesforcedx-vscode",
-                "CumulusCI.cci",
-                "robocorp.robotframework-lsp",
-                "ms-python.python"
-            ]
+				"salesforce.salesforcedx-vscode",
+				"CumulusCI.cci",
+				"robocorp.robotframework-lsp",
+				"ms-python.python",
+				"ms-azuretools.vscode-docker"
+			]
         }
     },
     "features": {
