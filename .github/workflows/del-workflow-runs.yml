@@ -1,9 +1,8 @@
 name: Delete old workflow runs
 on:
   schedule:
-    - cron: '0 0 * * *'
-# Run monthly, at 00:00 on the 1st day of month.
-
+    # Run weekly, at 00:00 on mondays.
+    - cron: '0 0 * * 1'
 jobs:
   del_runs:
     runs-on: ubuntu-latest
@@ -16,4 +15,4 @@ jobs:
         shell: bash
         env:
            GH_TOKEN: ${{ github.token }}
-        run: gh run --status failure --limit 200 list --json databaseId  -q '.[].databaseId' | xargs -IID gh api "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" -X DELETE
+        run: gh run --limit 100 list --json databaseId  -q '.[].databaseId' | xargs -IID gh api "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" -X DELETE
