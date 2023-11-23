@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "description": "GitHub MuseLab DX2",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "lint": "eslint **/{aura,lwc}/**",
     "test": "npm run test:unit",
