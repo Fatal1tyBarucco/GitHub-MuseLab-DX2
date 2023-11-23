@@ -1,10 +1,10 @@
 {
-    "packageDirectories": [
-        { "path": "force-app", "default": true}, 
-        { "path" : "src" }
-    ],
-    "pushPackageDirectoriesSequentially": true,
-    "namespace": "",
-    "sfdcLoginUrl": "https://resilient-narwhal-lc36xd-dev-ed.trailblaze.my.salesforce.com/",
-    "sourceApiVersion": "59.0"
+  "packageDirectories": [
+    { "path": "force-app", "default": true },
+    { "path": "src" }
+  ],
+  "pushPackageDirectoriesSequentially": true,
+  "namespace": "",
+  "sfdcLoginUrl": "https://wise-panda-qzd7va-dev-ed.my.salesforce.com/",
+  "sourceApiVersion": "59.0"
 }
