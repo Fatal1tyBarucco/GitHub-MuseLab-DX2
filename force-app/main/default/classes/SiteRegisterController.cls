@@ -1,5 +1,5 @@
 /**
- * An apex class that creates a portal user
+ * @description       : An apex class that creates a portal user
  */
 public with sharing class SiteRegisterController {
     // PORTAL_ACCOUNT_ID is the account on which the contact will be created on and then enabled as a portal user.
@@ -18,7 +18,9 @@ public with sharing class SiteRegisterController {
     private boolean isValidPassword() {
         return password == confirmPassword;
     }
-    
+    /**
+     * @description       : An apex class that creates a portal user
+     */
     public PageReference registerUser() {
         // it's okay if password is null - we'll send the user a random password in that case
         if (!isValidPassword()) {
