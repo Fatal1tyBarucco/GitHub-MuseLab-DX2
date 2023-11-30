@@ -1,6 +1,10 @@
 /**
- * An apex page controller that exposes the site login functionality
- */
+ * @description       : Test SiteLoginControllerTest
+ * @author            : Renato Barucco
+ * @group             : PowerBTS
+ * @last modified on  : 23-10-2023
+ * @last modified by  : Renato Barucco
+**/
 @IsTest global with sharing class SiteLoginControllerTest {
     @IsTest global static void testSiteLoginController () {
         // Instantiate a new controller with all parameters in the page
