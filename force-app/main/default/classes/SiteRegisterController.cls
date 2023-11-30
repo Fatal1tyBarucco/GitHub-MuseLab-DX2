@@ -20,6 +20,7 @@ public with sharing class SiteRegisterController {
     }
     /**
      * @description       : An apex class that creates a portal user
+     * @return            : Null or Page         
      */
     public PageReference registerUser() {
         // it's okay if password is null - we'll send the user a random password in that case
