@@ -36,7 +36,7 @@ jobs:
         with:
           version: '6.55.0'
           sourcePath: 'force-app'
-          rulesets: 'ruleset.xml'
+          rulesets: 'rulesets/ruleset.xml'
           analyzeModifiedFilesOnly: false
       # Check for PMD violations and show Warning
       - name: Check for PMD violations
