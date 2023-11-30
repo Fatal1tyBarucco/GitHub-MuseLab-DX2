@@ -31,12 +31,18 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Run PMD
+        uses: pmd/pmd-github-action@v1.4.0
         id: pmd
-        uses: pmd/pmd-github-action@967a81f8b657c87f7c3e96b62301cb1a48efef29
         with:
-          rulesets: 'rulesets/ruleset.xml'
-          sourcePath: 'force-app/main/default/classes'
+          version: '6.55.0'
+          sourcePath: 'force-app'
+          rulesets: 'ruleset.xml'
           analyzeModifiedFilesOnly: false
+      # Check for PMD violations and show Warning
+      - name: Check for PMD violations
+        if: steps.pmd.outputs.violations != 0
+        run: |
+          echo -e "\e[31mPMD VIOLATIONS ENCOUNTERED\e[0m"
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
