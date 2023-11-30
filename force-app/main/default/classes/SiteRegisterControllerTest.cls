@@ -1,5 +1,5 @@
 /**
- * Class containing tests for SiteRegisterController
+ * @description       : Class containing tests for SiteRegisterController
  */
 @IsTest public with sharing class SiteRegisterControllerTest {
     @IsTest static void testRegistration() {
