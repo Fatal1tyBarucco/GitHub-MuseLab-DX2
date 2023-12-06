@@ -1,0 +1,41 @@
+name: Semantic Release
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - 'README.md'
+
+#
+# Required to be able to call the REST API to create both the
+# new tag and release.
+#
+permissions:
+  contents: write
+
+jobs:
+  SemanticRelease:
+    name: Perform a semantic release
+    runs-on: ubuntu-latest
+    steps:
+      - name: action-release
+        id: release
+        uses: mateothegreat/action-release@main
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          owner: rbaruccojr
+          repo: My-Workflow
+          default: 0.0.1
+          prefix: v
+          increment: patch
+          release_name: release 🎉
+          release_body: |
+              Minor release with many small, but great improvements 👏
+          release_notes: true
+          committer_name: Renato Barucco
+          committer_email: barucco@gmail.com
+      - name: Print the current and next version using outputs
+        run: |
+          echo 'Current Version:' ${{ steps.release.outputs.current_version }}
+          echo 'Next Version:' ${{ steps.release.outputs.next_version }}
