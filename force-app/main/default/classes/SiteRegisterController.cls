@@ -8,13 +8,29 @@ public with sharing class SiteRegisterController {
     
     public SiteRegisterController () {
     }
-
+    /**
+     * @description       : public String
+     */
     public String username {get; set;}
+    /**
+     * @description       : public String
+     */
     public String email {get; set;}
+    /**
+     * @description       : public String
+     */
     public String password {get; set {password = value == null ? value : value.trim(); } }
+    /**
+     * @description       : public String
+     */
     public String confirmPassword {get; set { confirmPassword = value == null ? value : value.trim(); } }
+    /**
+     * @description       : public String
+     */
     public String communityNickname {get; set { communityNickname = value == null ? value : value.trim(); } }
-      
+    /**
+     * @description       : Apex private boolean isValidPassword
+     */
     private boolean isValidPassword() {
         return password == confirmPassword;
     }
