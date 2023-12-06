@@ -1,6 +1,5 @@
 /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
 public with sharing class MyProfilePageController {
 
@@ -15,7 +14,6 @@ public with sharing class MyProfilePageController {
     }
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public MyProfilePageController() {
         user = [SELECT id, email, username, usertype, communitynickname, timezonesidkey, languagelocalekey, firstname, lastname, phone, title,
@@ -36,14 +34,12 @@ public with sharing class MyProfilePageController {
     }
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public void edit() {
         isEdit=true;
     }
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public void save() {
         try {
@@ -62,7 +58,6 @@ public with sharing class MyProfilePageController {
     }
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public void cancel() {
         isEdit=false;
