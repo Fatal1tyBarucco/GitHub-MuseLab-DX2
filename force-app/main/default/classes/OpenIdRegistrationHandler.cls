@@ -21,7 +21,6 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
     }
 /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
   global User createUser(Id portalId, Auth.UserData data){
         try {
@@ -40,7 +39,6 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
   }
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     // Updates the user's first and last name
     global void updateUser(Id userId, Id portalId, Auth.UserData data){

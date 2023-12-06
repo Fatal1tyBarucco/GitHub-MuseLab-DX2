@@ -5,27 +5,22 @@
 public class MicrobatchSelfRegController {
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public String firstName {get; set;}
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public String lastName {get; set;}
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public String email {get; set;}
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public String communityNickname {get; set { communityNickname = value == null ? value : value.trim(); } }
     /**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
     public MicrobatchSelfRegController() {
         String expid = ApexPages.currentPage().getParameters().get('expid');
