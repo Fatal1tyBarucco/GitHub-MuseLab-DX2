@@ -21,6 +21,7 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
     }
 /**
     * @description       : Code we will invoke on page load.
+        * @return            : user
     */
   global User createUser(Id portalId, Auth.UserData data){
         try {
@@ -38,9 +39,9 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
         }
   }
     /**
-    * @description       : Code we will invoke on page load.
+    * @description       : Updates the user's first and last name
+        * @return        : user
     */
-    // Updates the user's first and last name
     global void updateUser(Id userId, Id portalId, Auth.UserData data){
         // //User u = new User(id=userId);
         // User user = [SELECT Id FROM User WHERE email = :data.email];
