@@ -1,7 +1,7 @@
 /**
  * @description       : Test SiteLoginControllerTest
  * @author            : Renato Barucco
- * @group             : PowerBTS
+ * @group             : cn
  * @last modified on  : 23-10-2023
  * @last modified by  : Renato Barucco
 **/

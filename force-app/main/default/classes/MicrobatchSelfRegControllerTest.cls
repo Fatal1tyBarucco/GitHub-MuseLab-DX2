@@ -1,6 +1,12 @@
 @IsTest
+/**
+    * @description       : Code we will invoke on page load.
+    */
  public with sharing class MicrobatchSelfRegControllerTest {
       @IsTest(SeeAllData=true)
+      /**
+    * @description       : Code we will invoke on page load.
+    */
      public static void testMicrobatchSelfRegController() {
          MicrobatchSelfRegController controller = new MicrobatchSelfRegController();
          controller.firstName = 'FirstName';

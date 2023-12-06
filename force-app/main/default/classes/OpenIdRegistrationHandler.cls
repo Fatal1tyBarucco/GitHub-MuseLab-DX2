@@ -9,7 +9,6 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
     class RegHandlerException extends Exception {}
   /**
     * @description       : Code we will invoke on page load.
-    * @return            : false
     */
   //Verifica se usuário é válido  
   global boolean canCreateUser(Auth.UserData data) {
@@ -21,7 +20,6 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
     }
 /**
     * @description       : Code we will invoke on page load.
-        * @return            : user
     */
   global User createUser(Id portalId, Auth.UserData data){
         try {

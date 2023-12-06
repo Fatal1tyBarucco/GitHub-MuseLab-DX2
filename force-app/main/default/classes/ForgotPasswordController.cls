@@ -18,7 +18,6 @@ public with sharing class ForgotPasswordController {
     public ForgotPasswordController() {}
 	/**
     * @description       : Code we will invoke on page load.
-    * @return            : Network
     */
   	public PageReference forgotPassword() {
   		boolean success = Site.forgotPassword(username);

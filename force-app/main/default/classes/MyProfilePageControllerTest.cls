@@ -1,7 +1,6 @@
 /**
- * An apex class that updates details of a portal user.
-   Guest users are never able to access this page.
- */
+    * @description       : Code we will invoke on page load.
+    */
 @IsTest public with sharing class MyProfilePageControllerTest {
 
     @IsTest(SeeAllData=true) static void testSave() {

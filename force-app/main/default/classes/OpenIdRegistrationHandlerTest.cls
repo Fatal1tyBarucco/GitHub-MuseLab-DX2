@@ -15,6 +15,10 @@ public class OpenIdRegistrationHandlerTest {
     //**    assert name and email
 
     //internal method to copy data from 2 different objects
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     private static Auth.UserData getUserDataFromUser(User user) {
         Auth.UserData userdata = new Auth.UserData(
             user.Id, user.FirstName, user.LastName, user.FirstName + ' ' + user.LastName, user.Email, null,
@@ -25,6 +29,9 @@ public class OpenIdRegistrationHandlerTest {
     }
     
     //test catch scenario of the OpenIdRegistrationHandler.createUser
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     @isTest private static void testLoginWithInexistentUserOrWrongEmailAddress() {
         // **mock UserData to test
         //    public UserData(String identifier, String firstName, String lastName, String fullName, String email, String link, 
@@ -42,6 +49,9 @@ public class OpenIdRegistrationHandlerTest {
     }
     
     //tests current login methods for existing users. Validating the First and Last name changes that may happen with AzureAD is different from SFDC fields.
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     private static testMethod void testCreateAndUpdateUser() {
         OpenIdRegistrationHandler regHandler = new OpenIdRegistrationHandler();
 
