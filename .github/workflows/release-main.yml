@@ -23,11 +23,11 @@ jobs:
         id: release
         uses: mateothegreat/action-release@main
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.GH_TOKEN }}
           owner: rbaruccojr
           repo: GitHub-MuseLab-DX2
           default: 0.0.1
-          prefix: v${{ env.next_version }}
+          # prefix: v
           increment: patch
           # release_name: release 🎉
           release_body: |
