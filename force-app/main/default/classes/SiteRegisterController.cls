@@ -30,6 +30,7 @@ public with sharing class SiteRegisterController {
     public String communityNickname {get; set { communityNickname = value == null ? value : value.trim(); } }
     /**
      * @description       : Apex private boolean isValidPassword
+     * @return            : password       
      */
     private boolean isValidPassword() {
         return password == confirmPassword;
