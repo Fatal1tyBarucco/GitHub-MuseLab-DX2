@@ -1,9 +1,11 @@
 /**
     * @description       : Code we will invoke on page load.
     */
-@IsTest public with sharing class MyProfilePageControllerTest {
+@IsTest 
+public with sharing class MyProfilePageControllerTest {
 
-    @IsTest(SeeAllData=true) static void testSave() {
+    @IsTest
+    static void testSave() {
         // Modify the test to query for a portal user that exists in your org
         List<User> existingPortalUsers = [SELECT id, profileId, userRoleId FROM User WHERE UserRoleId <> null AND UserType='CustomerSuccess'];
 
@@ -14,19 +16,19 @@
             System.assertEquals(currentUser.Id, controller.getUser().Id, 'Did not successfully load the current user');
             System.assert(controller.getIsEdit() == false, 'isEdit should default to false');
             controller.edit();
-            System.assert(controller.getIsEdit() == true);
+            System.assert(controller.getIsEdit() == true, '');
             controller.cancel();
-            System.assert(controller.getIsEdit() == false);
+            System.assert(controller.getIsEdit() == false, '');
             
-            System.assert(Page.ChangePassword.getUrl().equals(controller.changePassword().getUrl()));
+            System.assert(Page.ChangePassword.getUrl().equals(controller.changePassword().getUrl()), '');
             
             String randFax = Math.rint(Math.random() * 1000) + '5551234';
             controller.getUser().Fax = randFax;
             controller.save();
-            System.assert(controller.getIsEdit() == false);
+            System.assert(controller.getIsEdit() == false, '');
             
             currentUser = [Select id, fax from User where id =: currentUser.Id];
-            System.assert(currentUser.fax == randFax);
+            System.assert(currentUser.fax == randFax, 1);
         } else {
             User existingPortalUser = existingPortalUsers[0];
             String randFax = Math.rint(Math.random() * 1000) + '5551234';
@@ -36,19 +38,19 @@
                 System.assertEquals(existingPortalUser.Id, controller.getUser().Id, 'Did not successfully load the current user');
                 System.assert(controller.getIsEdit() == false, 'isEdit should default to false');
                 controller.edit();
-                System.assert(controller.getIsEdit() == true);
+                System.assert(controller.getIsEdit() == true, '');
 
                 controller.cancel();
-                System.assert(controller.getIsEdit() == false);
+                System.assert(controller.getIsEdit() == false, '');
 
                 controller.getUser().Fax = randFax;
                 controller.save();
-                System.assert(controller.getIsEdit() == false);
+                System.assert(controller.getIsEdit() == false, '');
             }
 
             // verify that the user was updated
             existingPortalUser = [Select id, fax from User where id =: existingPortalUser.Id];
-            System.assert(existingPortalUser.fax == randFax);
+            System.assert(existingPortalUser.fax == randFax, '');
         }
     }
 }

@@ -3,9 +3,9 @@
  */
 public with sharing class SiteRegisterController {
     /**
-     * @description       :   private static Id PORTAL_ACCOUNT_ID
+     * @description       :   private static Id portalAccountID
      */
-    private static Id PORTAL_ACCOUNT_ID = '001x000xxx35tPN';
+    private static Id portalAccountID = '001x000xxx35tPN';
     /**
      * @description       : public
      */
@@ -54,7 +54,7 @@ public with sharing class SiteRegisterController {
         u.Email = email;
         u.CommunityNickname = communityNickname;
         
-        String accountId = PORTAL_ACCOUNT_ID;
+        String accountId = portalAccountID;
 
         // lastName is a required field on user, but if it isn't specified, we'll default it to the username
         String userId = Site.createPortalUser(u, accountId, password);
