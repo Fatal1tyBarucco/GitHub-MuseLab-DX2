@@ -13,18 +13,18 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      versioning-strategy: increase
+    versioning-strategy: increase
 
   # Maintain dependencies for Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
-      versioning-strategy: increase
+    versioning-strategy: increase
 
   # Maintain dependencies for Composer
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
       interval: "daily"
-      versioning-strategy: increase
+    versioning-strategy: increase
