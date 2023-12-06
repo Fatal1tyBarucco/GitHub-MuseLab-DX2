@@ -29,7 +29,7 @@ jobs:
           default: 0.0.1
           prefix: v
           increment: patch
-          release_name: release 🎉
+          release_name: v${{ steps.release.outputs.next_version }}
           release_body: |
               Minor release with many small, but great improvements 👏
           release_notes: true
