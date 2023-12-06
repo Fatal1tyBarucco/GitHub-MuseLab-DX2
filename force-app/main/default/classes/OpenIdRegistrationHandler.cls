@@ -38,11 +38,8 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
             throw new RegHandlerException('Your user is not active or your data are wrong. Contact a Salesforce Admin.');
         }
   }
-    /**
-    * @description       : Updates the user's first and last name
-        * @return        : user
-    */
-    global void updateUser(Id userId, Id portalId, Auth.UserData data){
+    /*
+global void updateUser(Id userId, Id portalId, Auth.UserData data){
         // //User u = new User(id=userId);
         // User user = [SELECT Id FROM User WHERE email = :data.email];
 
@@ -53,5 +50,5 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
         //     user.firstName = data.firstName;
 
         // update(user);
-    }
+    } */
 }
