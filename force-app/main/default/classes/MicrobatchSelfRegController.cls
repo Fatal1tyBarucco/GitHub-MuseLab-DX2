@@ -35,7 +35,7 @@ public class MicrobatchSelfRegController {
     public PageReference registerUser() {
         String userName = email;
         String accountName; // to be filled by customer
-        String contactName; //to be filled by customer
+        String contactName = ''; //to be filled by customer
         String profileId = null; //to be filled by customer
         String UUID;
 
