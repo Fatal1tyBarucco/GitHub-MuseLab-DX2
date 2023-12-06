@@ -1,16 +1,22 @@
 /**
- * An apex class that updates portal user details.
-   Guest users are never able to access this page.
- */
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
 public with sharing class MyProfilePageController {
 
     private User user;
     private boolean isEdit = false;
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public User getUser() {
         return user;
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public MyProfilePageController() {
         user = [SELECT id, email, username, usertype, communitynickname, timezonesidkey, languagelocalekey, firstname, lastname, phone, title,
                 street, city, country, postalcode, state, localesidkey, mobilephone, extension, fax, contact.email
@@ -21,15 +27,24 @@ public with sharing class MyProfilePageController {
             throw new NoAccessException();
         }
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public Boolean getIsEdit() {
         return isEdit;
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public void edit() {
         isEdit=true;
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public void save() {
         try {
             update user;
@@ -38,11 +53,17 @@ public with sharing class MyProfilePageController {
             ApexPages.addMessages(e);
         }
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public PageReference changePassword() {
         return Page.ChangePassword;
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public void cancel() {
         isEdit=false;
         user = [SELECT id, email, username, communitynickname, timezonesidkey, languagelocalekey, firstname, lastname, phone, title,

@@ -1,26 +1,62 @@
 /**
  * An apex page controller that supports self registration of users in communities that allow self registration
  */
+/**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
 public class CommunitiesSelfRegController {
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public String firstName {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public String lastName {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public String email {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public String password {get; set {password = value == null ? value : value.trim(); } }
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public String confirmPassword {get; set { confirmPassword = value == null ? value : value.trim(); } }
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public String communityNickname {get; set { communityNickname = value == null ? value : value.trim(); } }
-    
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public CommunitiesSelfRegController() {
         String expid = ApexPages.currentPage().getParameters().get('expid');            
         if (expId != null) {
             Site.setExperienceId(expId); 
         }    
     }
-    
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     private boolean isValidPassword() {
         return password == confirmPassword;
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public PageReference registerUser() {
     
            // it's okay if password is null - we'll send the user a random password in that case

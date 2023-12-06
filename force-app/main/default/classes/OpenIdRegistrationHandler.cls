@@ -7,7 +7,10 @@
 **/
 global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
     class RegHandlerException extends Exception {}
-  
+  /**
+    * @description       : Code we will invoke on page load.
+    * @return            : false
+    */
   //Verifica se usuário é válido  
   global boolean canCreateUser(Auth.UserData data) {
  
@@ -16,7 +19,10 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
         }
         return false;
     }
-
+/**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
   global User createUser(Id portalId, Auth.UserData data){
         try {
             if(canCreateUser(data)) {
@@ -32,7 +38,10 @@ global class OpenIdRegistrationHandler implements Auth.RegistrationHandler{
             throw new RegHandlerException('Your user is not active or your data are wrong. Contact a Salesforce Admin.');
         }
   }
-    
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     // Updates the user's first and last name
     global void updateUser(Id userId, Id portalId, Auth.UserData data){
         // //User u = new User(id=userId);
