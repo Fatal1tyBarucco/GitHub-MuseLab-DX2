@@ -1,20 +1,41 @@
+/**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
 public class MicrobatchSelfRegController {
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String firstName {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String lastName {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String email {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String communityNickname {get; set { communityNickname = value == null ? value : value.trim(); } }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public MicrobatchSelfRegController() {
         String expid = ApexPages.currentPage().getParameters().get('expid');
         if (expId != null) {
             Site.setExperienceId(expId);
         }
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public PageReference registerUser() {
         String userName = email;
-        String accountName; // to be filled by customer
-        String contactName; //to be filled by customer
+        // String accountName; // to be filled by customer
+       // String contactName = ''; //to be filled by customer
         String profileId = null; //to be filled by customer
         String UUID;
 

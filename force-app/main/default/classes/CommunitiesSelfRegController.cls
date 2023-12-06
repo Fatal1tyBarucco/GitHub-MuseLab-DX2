@@ -1,26 +1,51 @@
 /**
- * An apex page controller that supports self registration of users in communities that allow self registration
- */
+    * @description       : Code we will invoke on page load.
+    */
 public class CommunitiesSelfRegController {
-
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String firstName {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String lastName {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String email {get; set;}
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String password {get; set {password = value == null ? value : value.trim(); } }
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String confirmPassword {get; set { confirmPassword = value == null ? value : value.trim(); } }
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public String communityNickname {get; set { communityNickname = value == null ? value : value.trim(); } }
-    
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public CommunitiesSelfRegController() {
         String expid = ApexPages.currentPage().getParameters().get('expid');            
         if (expId != null) {
             Site.setExperienceId(expId); 
         }    
     }
-    
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     private boolean isValidPassword() {
         return password == confirmPassword;
     }
-
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public PageReference registerUser() {
     
            // it's okay if password is null - we'll send the user a random password in that case
@@ -31,7 +56,7 @@ public class CommunitiesSelfRegController {
         }    
 
         String profileId = null; // To be filled in by customer.
-        String roleEnum = null; // To be filled in by customer.
+        //String roleEnum = null; // To be filled in by customer.
         String accountId = ''; // To be filled in by customer.
         
         String userName = email;

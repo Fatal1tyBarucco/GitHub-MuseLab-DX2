@@ -1,12 +1,16 @@
-/**
- * An apex page controller that takes the user to the right start page based on credentials or lack thereof
- */
+    /**
+    * @description       : Code we will invoke on page load.
+    */
 public with sharing class CommunitiesLandingController {
-    
-    // Code we will invoke on page load.
+    /**
+    * @description       : Code we will invoke on page load.
+    * @return            : Network
+    */
     public PageReference forwardToStartPage() {
         return Network.communitiesLanding();
     }
-    
+    /**
+    * @description       : Code we will invoke on page load.
+    */
     public CommunitiesLandingController() {}
 }

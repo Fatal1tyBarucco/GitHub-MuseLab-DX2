@@ -1,0 +1,15 @@
+name: Update Changelog 🎉
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🎉 Changelog Update 📄
+      uses: Fatal1tyBarucco/changelog_update@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
