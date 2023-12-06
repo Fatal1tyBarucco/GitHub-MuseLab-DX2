@@ -23,7 +23,7 @@ jobs:
         id: release
         uses: mateothegreat/action-release@main
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ github.token }}
           owner: rbaruccojr
           repo: My-Workflow
           default: 0.0.1
