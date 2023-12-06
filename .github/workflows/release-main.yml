@@ -27,9 +27,9 @@ jobs:
           owner: rbaruccojr
           repo: GitHub-MuseLab-DX2
           default: 0.0.1
-          prefix: v
+          prefix: v${{ env.next_version }}
           increment: patch
-          release_name: v${{ steps.release.outputs.next_version }}
+          # release_name: release 🎉
           release_body: |
               Minor release with many small, but great improvements 👏
           release_notes: true
