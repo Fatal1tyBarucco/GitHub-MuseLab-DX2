@@ -5,7 +5,7 @@
  * @last modified on  : 01/02/2022
  * @last modified by  : Otavio Passarelli (CS319648)
 **/
-@isTest(SeeAllData = true)
+@isTest
 public class OpenIdRegistrationHandlerTest {
 
     //** Steps of the test class:
@@ -32,7 +32,8 @@ public class OpenIdRegistrationHandlerTest {
     /**
     * @description       : Code we will invoke on page load.
     */
-    @isTest private static void testLoginWithInexistentUserOrWrongEmailAddress() {
+    @isTest
+    private static void testLoginWithInexistentUserOrWrongEmailAddress() {
         // **mock UserData to test
         //    public UserData(String identifier, String firstName, String lastName, String fullName, String email, String link, 
         //    String userName, String locale, String provider, String siteLoginUrl, Map<String,String> attributeMap)
@@ -44,24 +45,24 @@ public class OpenIdRegistrationHandlerTest {
             User user1 = regHandler.createUser(null, inexistentUser);           
         } catch(Exception e){
             String expectedExceptionText = 'Your user is not active or your data are wrong. Contact a Salesforce Admin.'; 
-            System.assertEquals(e.getMessage(), expectedExceptionText);
+            System.assertEquals(e.getMessage(), expectedExceptionText, 1);
         }
     }
     
-    //tests current login methods for existing users. Validating the First and Last name changes that may happen with AzureAD is different from SFDC fields.
     /**
     * @description       : Code we will invoke on page load.
     */
-    private static testMethod void testCreateAndUpdateUser() {
+    @isTest
+    private static void testCreateAndUpdateUser() {
         OpenIdRegistrationHandler regHandler = new OpenIdRegistrationHandler();
 
         // Test data setup
         User sampleUser1 = [SELECT UserName, Email, FirstName, LastName, Alias, LocaleSidKey FROM User WHERE Profile.Name = 'System Administrator' LIMIT 1];
 
-        // **Invoke createUser and verify its information -- checking for ID only as this is the only queried field in the createUser method.
-        // **then query user from DB using the user.Id from regHandler.createUserand and assert details  to validate no information was changed during creation.
+        // Invoke createUser and verify its information -- checking for ID only as this is the only queried field in the createUser method.
+        // then query user from DB using the user.Id from regHandler.createUserand and assert details  to validate no information was changed during creation.
         User user1 = regHandler.createUser(null, getUserDataFromUser(sampleUser1));
-        // System.assertEquals(sampleUser1.Id, user1.Id);
+        System.assertEquals(sampleUser1.Id, user1.Id, 1);
       
         // // **Update user 1 with user 2 data
         // Auth.UserData sampleUser2 = new Auth.UserData('testNewId', 'TestNewFirst', 'TestNewLast', 'TestNewFirst TestNewLast', 'testuser@exxonmobil.com', null, 
