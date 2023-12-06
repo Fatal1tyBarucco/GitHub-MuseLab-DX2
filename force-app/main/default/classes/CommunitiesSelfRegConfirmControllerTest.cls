@@ -7,5 +7,6 @@ public with sharing class CommunitiesSelfRegConfirmControllerTest {
     public static void testCommunitiesSelfRegConfirmController() {
         // Instantiate a new controller with all parameters in the page
         CommunitiesSelfRegConfirmController controller = new CommunitiesSelfRegConfirmController();
+        System.assertEquals(null, controller, '');
       }    
 }
