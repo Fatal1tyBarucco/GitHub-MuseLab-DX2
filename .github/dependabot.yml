@@ -7,6 +7,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    labels:
+      - "github actions dependecies"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
@@ -14,13 +16,16 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: increase
-
+    labels:
+      - "npm dependencies"
+      
   # Maintain dependencies for Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
-    versioning-strategy: increase
+    labels:
+      - "docker dependencies"
 
   # Maintain dependencies for Composer
   - package-ecosystem: "composer"
@@ -28,3 +33,5 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: increase
+    labels:
+      - "composer dependencies"
