@@ -7,14 +7,14 @@ name: Docker
 
 on:
   schedule:
-    - cron: '32 3 * * *'
+    - cron: '30 0 * * *'
   push:
     branches: [ "main" ]
     paths-ignore:
       - 'CHANGELOG.md'
       - 'README.md'
     # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
+    tags: [ '*.*.*' ]
   pull_request:
     branches: [ "main" ]
     paths-ignore:
