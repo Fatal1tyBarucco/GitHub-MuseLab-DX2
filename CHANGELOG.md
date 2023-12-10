@@ -1,5 +1,21 @@
 
 
+## 0.0.12
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.12 -->
+
+## What's Changed
+### 🏕 Features
+* Bump prettier from 3.1.0 to 3.1.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/44
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.11...0.0.12
+
+
+
+
 ## 0.0.11
 
 Minor release with many small, but great improvements 👏
