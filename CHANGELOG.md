@@ -1,5 +1,21 @@
 
 
+## 0.0.14
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.14 -->
+
+## What's Changed
+### 🏕 Features
+* Bump sigstore/cosign-installer from 3.2.0 to 3.3.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/45
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.13...0.0.14
+
+
+
+
 ## 0.0.13
 
 Minor release with many small, but great improvements 👏
