@@ -1,5 +1,23 @@
 
 
+## 0.0.19
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.19 -->
+
+## What's Changed
+### 🏕 Features
+* cron job - delete workflow runs weekly by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/32
+* Auto Release  by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/42
+* df by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/48
+* Feature/barucco by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/49
+* Update cleanup-caches.yml by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/50
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.18...0.0.19
+
+
 ## 0.0.18
 
 Minor release with many small, but great improvements 👏
