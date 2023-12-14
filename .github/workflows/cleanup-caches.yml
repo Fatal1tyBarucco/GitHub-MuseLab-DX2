@@ -13,14 +13,15 @@ jobs:
           gh extension install actions/gh-actions-cache
           
           echo "Fetching list of cache key"
-          cacheKeysForPR=$(gh actions-cache list -R $REPO -B $BRANCH -L 100 | cut -f 1 )
+          # cacheKeysForPR=$(gh actions-cache list -R $REPO -B $BRANCH -L 100 | cut -f 1 )
+          cacheKeysForPR=$(gh actions-cache list -R $REPO -L 100 | cut -f 1 )
 
           ## Setting this to not fail the workflow while deleting cache keys. 
           set +e
           echo "Deleting caches..."
           for cacheKey in $cacheKeysForPR
           do
-              echo $cacheKey
+              echo "Cache Key: " $cacheKey
               gh actions-cache delete $cacheKey -R $REPO -B $BRANCH --confirm
           done
           echo "Done"
