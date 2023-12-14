@@ -1,6 +1,7 @@
 name: Production Release
 on:
-    workflow_dispatch:
+  release:
+    types: [released]
 jobs:
     feature-test:
         name: "Production Release"
