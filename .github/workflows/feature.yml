@@ -4,6 +4,9 @@ on:
         branches:
             - feature/**
             - main
+        paths-ignore:
+            - 'CHANGELOG.md'
+            - 'README.md'
 jobs:
     feature-test:
         name: "Feature Test"

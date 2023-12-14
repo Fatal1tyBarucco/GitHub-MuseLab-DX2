@@ -8,10 +8,16 @@ name: pmd
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - 'README.md'
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - 'README.md'
   schedule:
-    - cron: '30 15 * * 4'
+    - cron: '0 0 * * 4'
 
 permissions:
   contents: read
@@ -44,6 +50,6 @@ jobs:
         run: |
           echo -e "\e[31mPMD VIOLATIONS ENCOUNTERED\e[0m"
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: pmd-report.sarif
