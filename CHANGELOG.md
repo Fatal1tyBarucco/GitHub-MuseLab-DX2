@@ -1,5 +1,19 @@
 
 
+## 0.0.26
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.26 -->
+
+## What's Changed
+### 🏕 Features
+* build(deps-dev): bump eslint-plugin-import from 2.29.0 to 2.29.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/55
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.25...0.0.26
+
+
 ## 0.0.25
 
 Minor release with many small, but great improvements 👏
