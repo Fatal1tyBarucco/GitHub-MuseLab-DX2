@@ -7,25 +7,16 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 99
-    labels:
-      - "github actions dependencies"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 99
     versioning-strategy: increase
-    labels:
-      - "npm dependencies"
       
   # Maintain dependencies for Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 99
-    labels:
-      - "docker dependencies"
