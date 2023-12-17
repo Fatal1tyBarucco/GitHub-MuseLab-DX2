@@ -1,10 +1,11 @@
 name: Production Release
 on:
-    workflow_dispatch:
+  release:
+    types: [released]
 jobs:
     feature-test:
         name: "Production Release"
-        uses: 'Fatal1tyBarucco/GitHub-MuseLab-DX2/.github/workflows/prod-release-.yml@main'
+        uses: 'Fatal1tyBarucco/GitHub-MuseLab-DX2/.github/workflows/prod-release.yml@main'
         secrets:
             dev-hub-auth-url: "${{ secrets.DEV_HUB_AUTH_URL }}"
             gh-email: "${{ secrets.GH_EMAIL }}"
