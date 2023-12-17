@@ -1,5 +1,31 @@
 
 
+## 0.0.27
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.27 -->
+
+## What's Changed
+### 🏕 Features
+* cron job - delete workflow runs weekly by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/32
+* Auto Release  by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/42
+* Bump prettier from 3.1.0 to 3.1.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/44
+* Bump sigstore/cosign-installer from 3.2.0 to 3.3.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/45
+* Bump @salesforce/cli from 2.20.6 to 2.21.7 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/46
+* Bump github/codeql-action from 2 to 3 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/47
+* df by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/48
+* Feature/barucco by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/49
+* Update cleanup-caches.yml by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/50
+* build(deps-dev): bump @salesforce/cli from 2.21.7 to 2.21.8 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/54
+* build(deps-dev): bump eslint-plugin-import from 2.29.0 to 2.29.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/55
+### 👒 Dependencies
+* Bump @salesforce/cli from 2.19.8 to 2.20.6 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/43
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.6...0.0.27
+
+
 ## 0.0.26
 
 Minor release with many small, but great improvements 👏
