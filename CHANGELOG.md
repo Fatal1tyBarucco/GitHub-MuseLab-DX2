@@ -1,5 +1,19 @@
 
 
+## 0.0.41
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.41 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump github/codeql-action from 2 to 3 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/61
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.38...0.0.41
+
+
 ## 0.0.38
 
 Minor release with many small, but great improvements 👏
