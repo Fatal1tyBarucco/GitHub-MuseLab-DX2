@@ -1,5 +1,22 @@
 
 
+## 0.0.38
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.38 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump hadolint/hadolint-action from 2.1.0 to 3.1.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/57
+* build(deps): bump actions/checkout from 2 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/58
+* build(deps): bump docker/metadata-action from 5.3.0 to 5.4.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/59
+* build(deps): bump actions/setup-node from 2 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/60
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.37...0.0.38
+
+
 ## 0.0.40
 
 Minor release with many small, but great improvements 👏
