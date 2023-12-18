@@ -41,8 +41,5 @@
     "**/{aura,lwc}/**": [
       "eslint"
     ]
-  },
-  "dependencies": {
-    "npm-check-updates": "^16.14.11"
   }
 }
