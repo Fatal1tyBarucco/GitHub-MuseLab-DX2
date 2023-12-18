@@ -21,17 +21,17 @@
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.7.0",
     "@prettier/plugin-xml": "^3.2.2",
-    "@salesforce/cli": "2.21.7",
+    "@salesforce/cli": "2.23.3",
     "@salesforce/eslint-config-lwc": "3.5.2",
     "@salesforce/eslint-plugin-aura": "2.1.0",
     "@salesforce/eslint-plugin-lightning": "1.0.0",
     "@salesforce/sfdx-lwc-jest": "3.1.0",
-    "eslint": "^8.55.0",
-    "eslint-plugin-import": "^2.29.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^27.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
+    "prettier": "^4.0.0-alpha.7",
     "prettier-plugin-apex": "^2.0.1"
   },
   "lint-staged": {
@@ -41,5 +41,8 @@
     "**/{aura,lwc}/**": [
       "eslint"
     ]
+  },
+  "dependencies": {
+    "npm-check-updates": "^16.14.11"
   }
 }
