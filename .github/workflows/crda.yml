@@ -94,10 +94,11 @@ jobs:
       #
       # Example:
       - name: Setup Node
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
+      - name: Install deps
+        run: npm install
 
       # https://github.com/redhat-actions/openshift-tools-installer/blob/main/README.md
       - name: Install CRDA CLI
