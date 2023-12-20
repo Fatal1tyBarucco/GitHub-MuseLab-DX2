@@ -96,7 +96,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: 'latest'
       - name: Install deps
         run: npm install
 
