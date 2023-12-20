@@ -1,5 +1,25 @@
 
 
+## 0.0.45
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.45 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump hadolint/hadolint-action from 2.1.0 to 3.1.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/57
+* build(deps): bump actions/checkout from 2 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/58
+* build(deps): bump docker/metadata-action from 5.3.0 to 5.4.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/59
+* build(deps): bump actions/setup-node from 2 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/60
+* build(deps): bump github/codeql-action from 2 to 3 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/61
+* build(deps-dev): bump @salesforce/cli from 2.23.3 to 2.23.4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/62
+* build(deps-dev): bump @salesforce/cli from 2.23.4 to 2.23.6 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/63
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.37...0.0.45
+
+
 ## 0.0.36
 
 Minor release with many small, but great improvements 👏
