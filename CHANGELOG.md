@@ -1,5 +1,19 @@
 
 
+## 0.0.54
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.54 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump actions/checkout from 2 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/67
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.51...0.0.54
+
+
 ## 0.0.53
 
 Minor release with many small, but great improvements 👏
