@@ -1,5 +1,21 @@
 
 
+## 0.0.51
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.51 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump github/codeql-action from 2 to 3 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/64
+* build(deps): bump docker/metadata-action from 5.3.0 to 5.4.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/65
+* build(deps): bump hadolint/hadolint-action from 2.1.0 to 3.1.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/66
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.50...0.0.51
+
+
 ## 0.0.50
 
 Minor release with many small, but great improvements 👏
