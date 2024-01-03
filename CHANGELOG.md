@@ -1,5 +1,20 @@
 
 
+## 0.0.65
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.65 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump eslint-plugin-jest from 27.6.0 to 27.6.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/78
+* build(deps-dev): bump @salesforce/cli from 2.23.19 to 2.23.20 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/79
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.64...0.0.65
+
+
 ## 0.0.64
 
 Minor release with many small, but great improvements 👏
