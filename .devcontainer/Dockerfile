@@ -3,7 +3,7 @@ FROM ghcr.io/muselab-d2x/d2x:latest
 
 # Set up bash prompt
 USER d2x
-COPY .devcontainer/pureline.conf ~/pureline.conf
+COPY .devcontainer/pureline.conf /home/d2x/pureline.conf
 RUN git clone https://github.com/chris-marsh/pureline.git ~/pureline
 WORKDIR /home/d2x/pureline
 RUN git reset --hard 9940906e824aae3a6f4bd0ee4dac2ea423d31089 \
