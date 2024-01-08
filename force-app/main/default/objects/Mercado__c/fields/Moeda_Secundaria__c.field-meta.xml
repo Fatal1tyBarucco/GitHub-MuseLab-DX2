@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Moeda_Secundaria__c</fullName>
+    <description>Moeda secundária é o ativo ao qual se vende neste mercado.</description>
+    <externalId>false</externalId>
+    <formula>RIGHT(Name ,LEN(Name )-FIND(&quot;/&quot;, Name))</formula>
+    <inlineHelpText>Moeda secundária é o ativo ao qual se vende neste mercado.</inlineHelpText>
+    <label>Moeda Secundária</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

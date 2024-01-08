@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Ordem__c</entityName>
+    <fieldName>OrdemStatus__c</fieldName>
+    <masterLabel>Ordem Cancelada</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Felizmente sua ordem foi cancelada à tempo&lt;/p&gt;</info>
+        <picklistValueName>Cancelada</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Cancelada</recordTypeName>
+</PathAssistant>

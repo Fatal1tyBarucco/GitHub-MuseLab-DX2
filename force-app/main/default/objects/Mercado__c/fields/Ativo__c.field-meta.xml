@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ativo__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>significa que o mercado está ativo para novas ordens/transações</description>
+    <externalId>false</externalId>
+    <inlineHelpText>significa que o mercado está ativo para novas ordens/transações</inlineHelpText>
+    <label>Ativo</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

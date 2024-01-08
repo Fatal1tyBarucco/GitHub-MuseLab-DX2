@@ -1,3 +1,0 @@
-<aura:component implements="forceCommunity:availableForAllPageTypes">
-    <img src="{!$Resource.logo}" style="margin-left: 500px;"/>
-</aura:component>	
