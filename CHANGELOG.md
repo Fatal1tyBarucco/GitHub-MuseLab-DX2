@@ -1,5 +1,16 @@
 
 
+## 0.0.77
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.77 -->
+
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.76...0.0.77
+
+
 ## 0.0.76
 
 Minor release with many small, but great improvements 👏
