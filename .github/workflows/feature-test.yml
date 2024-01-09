@@ -47,3 +47,7 @@ jobs:
               run: |
                 cci org scratch_delete feature
               shell: bash
+            - name: Upload coverage reports to Codecov
+              uses: codecov/codecov-action@v3
+              env:
+                CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
