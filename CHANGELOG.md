@@ -1,5 +1,19 @@
 
 
+## 0.0.83
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.83 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump follow-redirects from 1.15.3 to 1.15.4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/84
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.82...0.0.83
+
+
 ## 0.0.82
 
 Minor release with many small, but great improvements 👏
