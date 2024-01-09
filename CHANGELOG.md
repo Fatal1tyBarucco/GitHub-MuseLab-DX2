@@ -1,5 +1,19 @@
 
 
+## 0.0.87
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.87 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump python from 3.11-slim-bookworm to 3.12-slim-bookworm by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/86
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.86...0.0.87
+
+
 ## 0.0.86
 
 Minor release with many small, but great improvements 👏
