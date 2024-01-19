@@ -1,5 +1,19 @@
 
 
+## 0.0.95
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.95 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump actions/dependency-review-action from 3 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/96
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.94...0.0.95
+
+
 ## 0.0.94
 
 Minor release with many small, but great improvements 👏
