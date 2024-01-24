@@ -1,5 +1,19 @@
 
 
+## 0.0.99
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.99 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/cli from 2.26.9 to 2.26.10 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/100
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.98...0.0.99
+
+
 ## 0.0.98
 
 Minor release with many small, but great improvements 👏
