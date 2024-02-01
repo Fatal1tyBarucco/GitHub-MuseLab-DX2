@@ -1,5 +1,21 @@
 
 
+## 0.0.110
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.110 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump codecov/codecov-action from 3 to 4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/111
+* build(deps): bump docker/metadata-action from 5.5.0 to 5.5.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/112
+* build(deps): bump sigstore/cosign-installer from 3.3.0 to 3.4.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/113
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.109...0.0.110
+
+
 ## 0.0.109
 
 Minor release with many small, but great improvements 👏
