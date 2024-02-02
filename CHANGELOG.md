@@ -1,5 +1,19 @@
 
 
+## 0.0.113
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.113 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump husky from 9.0.7 to 9.0.10 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/114
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.110...0.0.113
+
+
 ## 0.0.111
 
 Minor release with many small, but great improvements 👏
