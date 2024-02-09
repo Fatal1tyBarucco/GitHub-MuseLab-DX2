@@ -1,5 +1,19 @@
 
 
+## 0.0.120
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.120 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/sfdx-lwc-jest from 3.1.1 to 4.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/121
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.119...0.0.120
+
+
 ## 0.0.119
 
 Minor release with many small, but great improvements 👏
