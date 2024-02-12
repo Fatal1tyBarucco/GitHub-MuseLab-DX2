@@ -1,5 +1,19 @@
 
 
+## 0.0.122
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.122 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @prettier/plugin-xml from 3.2.2 to 3.3.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/123
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.121...0.0.122
+
+
 ## 0.0.121
 
 Minor release with many small, but great improvements 👏
