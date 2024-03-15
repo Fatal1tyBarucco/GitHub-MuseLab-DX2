@@ -1,5 +1,19 @@
 
 
+## 0.0.155
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.155 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump the npm_and_yarn group across 1 directory with 1 update by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/158
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.154...0.0.155
+
+
 ## 0.0.154
 
 Minor release with many small, but great improvements 👏
