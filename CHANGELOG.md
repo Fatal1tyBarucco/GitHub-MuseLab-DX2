@@ -1,5 +1,19 @@
 
 
+## 0.0.156
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.156 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump pmd/pmd-github-action from 1.4.1 to 2.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/159
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.155...0.0.156
+
+
 ## 0.0.155
 
 Minor release with many small, but great improvements 👏
