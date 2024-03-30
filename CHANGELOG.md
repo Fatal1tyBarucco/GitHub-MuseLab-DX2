@@ -1,5 +1,19 @@
 
 
+## 0.0.167
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.167 -->
+
+## What's Changed
+### 🏕 Features
+* [Snyk] Security upgrade python from 3.12-slim-bookworm to 3.13.0a4-slim by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/169
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.166...0.0.167
+
+
 ## 0.0.166
 
 Minor release with many small, but great improvements 👏
