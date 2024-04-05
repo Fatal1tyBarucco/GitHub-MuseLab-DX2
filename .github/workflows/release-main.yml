@@ -24,7 +24,7 @@ jobs:
         uses: mateothegreat/action-release@main
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          owner: rbaruccojr
+          owner: Fatal1tyBarucco
           repo: GitHub-MuseLab-DX2
           default: 0.0.1
           # prefix: v
