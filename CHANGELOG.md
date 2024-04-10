@@ -1,5 +1,20 @@
 
 
+## 0.0.179
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.179 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump python from 3.13.0a5-slim to 3.13.0a6-slim by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/181
+* build(deps-dev): bump @salesforce/sfdx-lwc-jest from 4.0.1 to 5.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/182
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.178...0.0.179
+
+
 ## 0.0.178
 
 Minor release with many small, but great improvements 👏
