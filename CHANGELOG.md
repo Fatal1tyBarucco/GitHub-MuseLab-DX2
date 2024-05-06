@@ -1,5 +1,19 @@
 
 
+## 0.0.208
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.208 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump eslint from 9.1.1 to 9.2.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/211
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.207...0.0.208
+
+
 ## 0.0.207
 
 Minor release with many small, but great improvements 👏
