@@ -1,5 +1,20 @@
 
 
+## 0.0.206
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.206 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump eslint-plugin-jest from 28.3.0 to 28.4.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/207
+* build(deps-dev): bump prettier-plugin-apex from 2.1.3 to 2.1.4 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/208
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.205...0.0.206
+
+
 ## 0.0.205
 
 Minor release with many small, but great improvements 👏
