@@ -1,5 +1,19 @@
 
 
+## 0.0.227
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.227 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump docker/login-action from 3.1.0 to 3.2.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/230
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.226...0.0.227
+
+
 ## 0.0.226
 
 Minor release with many small, but great improvements 👏
