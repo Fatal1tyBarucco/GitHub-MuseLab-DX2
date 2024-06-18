@@ -1,5 +1,19 @@
 
 
+## 0.0.247
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.247 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump ws from 8.16.0 to 8.17.1 in the npm_and_yarn group by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/252
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.246...0.0.247
+
+
 ## 0.0.246
 
 Minor release with many small, but great improvements 👏
