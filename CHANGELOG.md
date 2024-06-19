@@ -1,5 +1,19 @@
 
 
+## 0.0.248
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.248 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump docker/build-push-action from 6.0.0 to 6.0.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/253
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.247...0.0.248
+
+
 ## 0.0.247
 
 Minor release with many small, but great improvements 👏
