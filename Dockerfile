@@ -1,6 +1,6 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.13.0b3-slim
 
-LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
+LABEL org.opencontainers.image.source="https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2"
 
 # Install sfdx
 RUN apt-get update
