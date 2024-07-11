@@ -12,10 +12,10 @@ RUN \
   apt-get update
 RUN apt-get install -y nodejs
 RUN npm install --global npm jq commander
-RUN npm install --global sfdx-cli --ignore-scripts
+RUN npm install --global @salesforce/cli@latest
 
 # Install Salesforce CLI plugins:
-RUN sfdx plugins:install @salesforce/sfdx-scanner
+RUN sf plugins by install @salesforce/sfdx-scanner
 
 # Install GitHub CLI
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg;
