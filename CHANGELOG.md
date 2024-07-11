@@ -1,5 +1,19 @@
 
 
+## 0.0.277
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.277 -->
+
+## What's Changed
+### 🏕 Features
+* Atualizar o Docker filet by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/282
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.276...0.0.277
+
+
 ## 0.0.276
 
 Minor release with many small, but great improvements 👏
