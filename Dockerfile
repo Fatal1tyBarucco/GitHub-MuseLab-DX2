@@ -1,6 +1,6 @@
 FROM python:3.13.0b3-slim
 
-LABEL org.opencontainers.image.source = "https://github.com/muselab-d2x/d2x"
+LABEL org.opencontainers.image.source "https://github.com/muselab-d2x/d2x"
 
 # Install sfdx
 RUN apt-get update
@@ -23,6 +23,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/g
 RUN apt-get install -y gh
 
 # Install CumulusCI
+RUN npm install -g pip
 RUN pip install --no-cache-dir --upgrade pip pip-tools
 RUN pip --no-cache-dir install cumulusci cookiecutter
 
