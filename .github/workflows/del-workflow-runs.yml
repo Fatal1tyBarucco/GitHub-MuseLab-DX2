@@ -15,4 +15,4 @@ jobs:
         shell: bash
         env:
            GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: gh run --limit 100 list --json databaseId  -q '.[].databaseId' | xargs -IID gh api "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" -X DELETE
+        run: gh run --limit 10 list --json databaseId  -q '.[].databaseId' | xargs -IID gh api "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" -X DELETE
