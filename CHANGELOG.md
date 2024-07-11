@@ -1,5 +1,19 @@
 
 
+## 0.0.271
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.271 -->
+
+## What's Changed
+### 🏕 Features
+* Atualizar o del-workflow-runs.yml by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/276
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.270...0.0.271
+
+
 ## 0.0.270
 
 Minor release with many small, but great improvements 👏
