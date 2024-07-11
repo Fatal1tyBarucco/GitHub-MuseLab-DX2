@@ -1,5 +1,19 @@
 
 
+## 0.0.276
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.276 -->
+
+## What's Changed
+### 🏕 Features
+* Atualizar o Dockerfile by @rbaruccojr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/281
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.275...0.0.276
+
+
 ## 0.0.275
 
 Minor release with many small, but great improvements 👏
