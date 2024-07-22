@@ -1,5 +1,21 @@
 
 
+## 0.0.289
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.289 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump docker/setup-buildx-action from 3.4.0 to 3.5.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/294
+* build(deps): bump docker/build-push-action from 6.4.1 to 6.5.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/295
+* build(deps): bump docker/login-action from 3.2.0 to 3.3.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/296
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.288...0.0.289
+
+
 ## 0.0.288
 
 Minor release with many small, but great improvements 👏
