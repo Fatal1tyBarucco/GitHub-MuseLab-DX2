@@ -1,5 +1,19 @@
 
 
+## 0.0.288
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.288 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump python from 3.13.0b3-slim to 3.13.0b4-slim by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/293
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.286...0.0.288
+
+
 ## 0.0.286
 
 Minor release with many small, but great improvements 👏
