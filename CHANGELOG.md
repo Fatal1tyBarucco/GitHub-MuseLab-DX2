@@ -1,5 +1,20 @@
 
 
+## 0.0.299
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.299 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump eslint from 9.7.0 to 9.8.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/304
+* build(deps-dev): bump husky from 9.1.2 to 9.1.3 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/305
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.298...0.0.299
+
+
 ## 0.0.298
 
 Minor release with many small, but great improvements 👏
