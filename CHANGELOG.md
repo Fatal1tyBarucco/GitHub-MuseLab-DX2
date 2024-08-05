@@ -1,5 +1,20 @@
 
 
+## 0.0.309
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.309 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump lint-staged from 15.2.7 to 15.2.8 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/314
+* build(deps-dev): bump eslint-plugin-jest from 28.6.0 to 28.7.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/315
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.308...0.0.309
+
+
 ## 0.0.308
 
 Minor release with many small, but great improvements 👏
