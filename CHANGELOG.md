@@ -1,5 +1,19 @@
 
 
+## 0.0.322
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.322 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump axios from 1.6.8 to 1.7.4 in the npm_and_yarn group by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/329
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.321...0.0.322
+
+
 ## 0.0.321
 
 Minor release with many small, but great improvements 👏
