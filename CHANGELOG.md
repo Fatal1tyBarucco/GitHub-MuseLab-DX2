@@ -1,5 +1,20 @@
 
 
+## 0.0.373
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.373 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump docker/setup-buildx-action from 3.7.0 to 3.7.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/383
+* build(deps): bump sigstore/cosign-installer from 3.6.0 to 3.7.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/384
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.372...0.0.373
+
+
 ## 0.0.372
 
 Minor release with many small, but great improvements 👏
