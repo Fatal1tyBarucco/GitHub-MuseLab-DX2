@@ -1,5 +1,20 @@
 
 
+## 0.0.408
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.408 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/cli from 2.67.4 to 2.67.5 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/419
+* build(deps-dev): bump prettier-plugin-apex from 2.2.1 to 2.2.2 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/420
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.407...0.0.408
+
+
 ## 0.0.407
 
 Minor release with many small, but great improvements 👏
