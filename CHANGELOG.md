@@ -1,5 +1,19 @@
 
 
+## 0.0.414
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.414 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump codecov/codecov-action from 4 to 5 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/425
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.413...0.0.414
+
+
 ## 0.0.413
 
 Minor release with many small, but great improvements 👏
