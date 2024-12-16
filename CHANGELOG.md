@@ -1,5 +1,19 @@
 
 
+## 0.0.442
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.442 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump docker/setup-buildx-action from 3.7.1 to 3.8.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/454
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.441...0.0.442
+
+
 ## 0.0.441
 
 Minor release with many small, but great improvements 👏
