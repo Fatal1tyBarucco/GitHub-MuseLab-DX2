@@ -1,5 +1,20 @@
 
 
+## 0.0.461
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.461 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/cli from 2.72.15 to 2.72.18 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/473
+* build(deps-dev): bump @lwc/eslint-plugin-lwc from 1.9.0 to 2.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/474
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.459...0.0.461
+
+
 ## 0.0.460
 
 Minor release with many small, but great improvements 👏
