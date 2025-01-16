@@ -1,5 +1,20 @@
 
 
+## 0.0.471
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.471 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/cli from 2.73.7 to 2.74.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/484
+* build(deps-dev): bump lint-staged from 15.3.0 to 15.4.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/485
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.469...0.0.471
+
+
 ## 0.0.469
 
 Minor release with many small, but great improvements 👏
