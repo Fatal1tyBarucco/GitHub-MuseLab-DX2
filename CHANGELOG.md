@@ -1,5 +1,19 @@
 
 
+## 0.0.473
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.473 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump lint-staged from 15.4.0 to 15.4.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/487
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.472...0.0.473
+
+
 ## 0.0.472
 
 Minor release with many small, but great improvements 👏
