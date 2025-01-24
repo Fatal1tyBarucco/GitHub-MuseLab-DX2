@@ -19,7 +19,7 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^2.0.1",
+    "@lwc/eslint-plugin-lwc": "^2.1.0",
     "@prettier/plugin-xml": "^3.4.1",
     "@salesforce/cli": "2.75.0",
     "@salesforce/eslint-config-lwc": "3.7.1",
