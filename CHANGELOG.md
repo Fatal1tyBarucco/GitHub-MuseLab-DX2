@@ -1,5 +1,19 @@
 
 
+## 0.0.493
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.493 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump prettier-plugin-apex from 2.2.2 to 2.2.3 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/507
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.492...0.0.493
+
+
 ## 0.0.492
 
 Minor release with many small, but great improvements 👏
