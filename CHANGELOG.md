@@ -1,5 +1,19 @@
 
 
+## 0.0.515
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.515 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump prettier from 4.0.0-alpha.10 to 4.0.0-alpha.11 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/529
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.514...0.0.515
+
+
 ## 0.0.514
 
 Minor release with many small, but great improvements 👏
