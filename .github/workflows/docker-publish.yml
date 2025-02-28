@@ -45,21 +45,13 @@ jobs:
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
-      - name: Install go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.23'
-          check-latest: true
       - name: Install Cosign
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@v3.8.1
         with:
-          cosign-release: main
+          cosign-release: 'v2.1.1'
       - name: Check install!
         run: cosign version
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
 
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
