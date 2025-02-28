@@ -45,12 +45,6 @@ jobs:
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
-      - name: Install cosign
-        if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@v3.8.1 #v3.8.1
-        with:
-          cosign-release: main
-
       - name: Install go
         uses: actions/setup-go@v5
         with:
