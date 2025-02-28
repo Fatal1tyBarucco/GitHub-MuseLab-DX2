@@ -7,10 +7,11 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y gnupg wget curl git
 RUN \
-  echo "deb https://deb.nodesource.com/node_22.x bullseye main" > /etc/apt/sources.list.d/nodesource.list && \
+  echo "deb https://deb.nodesource.com/setup_22.x bullseye main" > /etc/apt/sources.list.d/nodesource.list && \
   wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
   apt-get update
-RUN apt-get install -y nodejs
+# RUN apt-get install -y nodejs
+RUN apt-get install nsolid -y
 RUN npm install --global npm
 RUN npm install --global jq
 RUN npm install --global commander
