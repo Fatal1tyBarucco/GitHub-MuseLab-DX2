@@ -11,7 +11,9 @@ RUN \
   wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
   apt-get update
 RUN apt-get install -y nodejs
-RUN npm install --global npm jq commander
+RUN npm install --global npm
+RUN npm install --global jq
+RUN npm install --global commander
 RUN npm install --global @salesforce/cli@latest
 
 # Install Salesforce CLI plugins:
