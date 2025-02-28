@@ -48,7 +48,7 @@ jobs:
                   context: .
                   push: ${{ github.event_name == 'push' }}
                   tags: |
-                      ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}${{ matrix.target == 'browser' && '-browser' || '' }}${{ matrix.platform == 'linux/arm64' && '-arm64' || '' }}
+                      ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}${{ matrix.target == 'browser' && '-browser' || '' }}${{ matrix.platform == 'linux/arm64' && '-arm64' || '' }}
                   platforms: ${{ matrix.platform }}
                   target: ${{ matrix.target }}
                   cache-from: type=gha
@@ -78,18 +78,18 @@ jobs:
             - name: Create and push multi-arch manifests
               run: |
                   # For no-browser
-                  docker buildx imagetools create -t ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }} \
-                    ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }} \
-                    ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}-arm64
+                  docker buildx imagetools create -t ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }} \
+                    ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }} \
+                    ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}-arm64
 
                   # For browser
-                  docker buildx imagetools create -t ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}-browser \
-                    ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}-browser \
-                    ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}-browser-arm64
+                  docker buildx imagetools create -t ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}-browser \
+                    ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}-browser \
+                    ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}-browser-arm64
 
             - name: Inspect manifests
               run: |
                   echo "Inspecting no-browser manifest:"
-                  docker buildx imagetools inspect ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}
+                  docker buildx imagetools inspect ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}
                   echo "Inspecting browser manifest:"
-                  docker buildx imagetools inspect ghcr.io/${{ github.repository }}:${{ env.IMAGE_TAG }}-browser
+                  docker buildx imagetools inspect ghcr.io/fatal1tybarucco/github-muselab-dx2:${{ env.IMAGE_TAG }}-browser
