@@ -1,5 +1,20 @@
 
 
+## 0.0.547
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.547 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump prettier-plugin-apex from 2.2.4 to 2.2.5 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/544
+* build(deps-dev): bump eslint from 9.21.0 to 9.22.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/545
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.545...0.0.547
+
+
 ## 0.0.546
 
 Minor release with many small, but great improvements 👏
