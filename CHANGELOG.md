@@ -1,5 +1,19 @@
 
 
+## 0.0.579
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.579 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/eslint-config-lwc from 3.7.1 to 4.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/577
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.577...0.0.579
+
+
 ## 0.0.578
 
 Minor release with many small, but great improvements 👏
