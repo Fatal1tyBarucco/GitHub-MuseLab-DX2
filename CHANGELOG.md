@@ -1,5 +1,20 @@
 
 
+## 0.0.576
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.576 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/eslint-plugin-lightning from 1.0.1 to 2.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/574
+* build(deps-dev): bump lint-staged from 15.5.0 to 15.5.1 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/575
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.575...0.0.576
+
+
 ## 0.0.575
 
 Minor release with many small, but great improvements 👏
