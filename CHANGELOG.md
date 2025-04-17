@@ -1,5 +1,21 @@
 
 
+## 0.0.583
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.583 -->
+
+## What's Changed
+### 🏕 Features
+* Atualizar o release-main.yml by @RBarucco-jr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/581
+
+## New Contributors
+* @RBarucco-jr made their first contribution in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/581
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.582...0.0.583
+
+
 ## 0.0.582
 
 Minor release with many small, but great improvements 👏
