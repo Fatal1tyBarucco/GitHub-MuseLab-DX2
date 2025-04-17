@@ -1,5 +1,20 @@
 
 
+## 0.0.585
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.585 -->
+
+## What's Changed
+### 🏕 Features
+* Update docker-publish.yml by @RBarucco-jr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/584
+* Atualizar o docker-publish.yml by @RBarucco-jr in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/585
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.584...0.0.585
+
+
 ## 0.0.584
 
 Minor release with many small, but great improvements 👏
