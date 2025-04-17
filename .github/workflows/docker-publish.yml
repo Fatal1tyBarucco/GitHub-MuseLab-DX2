@@ -25,7 +25,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io # ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  # IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: rbarucco/github-muselab-dx2
 
 jobs:
   build:
@@ -73,7 +74,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5 # v5.7.0
         with:
-          images: rbarucco/${{ env.IMAGE_NAME }} # ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -85,8 +86,8 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=fatal1tybarucco/github-muselab-dx2:buildcache
-          cache-to: type=registry,ref=fatal1tybarucco/github-muselab-dx2:buildcache,mode=max
+          cache-from: type=registry,ref=${{ env.IMAGE_NAME }}:buildcache
+          cache-to: type=registry,ref=${{ env.IMAGE_NAME }}:buildcache,mode=max
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
@@ -102,6 +103,7 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --force --yes {}@${DIGEST}
+        
       - name: Upload code coverage for Apex to Codecov.io
         uses: codecov/codecov-action@v5
         env:
