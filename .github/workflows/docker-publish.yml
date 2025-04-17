@@ -59,7 +59,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: rbarucco # ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.DOCKER }}
 
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
