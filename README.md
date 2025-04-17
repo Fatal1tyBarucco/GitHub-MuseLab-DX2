@@ -10,3 +10,5 @@
 [![pmd](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/pmd.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/pmd.yml)
 [![Dependency Review](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/dependency-review.yml)
 [![Delete old workflow runs](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/del-workflow-runs.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/del-workflow-runs.yml)
+<br>
+[![Update Changelog 🎉](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/update-changelog.yml)
