@@ -1,5 +1,19 @@
 
 
+## 0.0.612
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.612 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @salesforce/eslint-plugin-aura from 2.1.0 to 3.0.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/606
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.611...0.0.612
+
+
 ## 0.0.611
 
 Minor release with many small, but great improvements 👏
