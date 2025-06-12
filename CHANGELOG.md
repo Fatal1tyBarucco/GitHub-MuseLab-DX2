@@ -1,5 +1,19 @@
 
 
+## 0.0.640
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.640 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump @lwc/eslint-plugin-lwc from 3.0.0 to 3.1.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/638
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.639...0.0.640
+
+
 ## 0.0.639
 
 Minor release with many small, but great improvements 👏
