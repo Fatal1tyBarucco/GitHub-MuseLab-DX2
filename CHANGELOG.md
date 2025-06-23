@@ -1,5 +1,19 @@
 
 
+## 0.0.650
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.650 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps-dev): bump eslint-plugin-import from 2.31.0 to 2.32.0 by @dependabot in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/651
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.649...0.0.650
+
+
 ## 0.0.649
 
 Minor release with many small, but great improvements 👏
