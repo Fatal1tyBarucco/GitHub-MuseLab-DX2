@@ -1,5 +1,19 @@
 
 
+## 0.0.676
+
+Minor release with many small, but great improvements 👏
+
+<!-- Release notes generated using configuration in .github/release.yml at 0.0.676 -->
+
+## What's Changed
+### 👒 Dependencies
+* build(deps): bump form-data from 4.0.0 to 4.0.4 in the npm_and_yarn group by @dependabot[bot] in https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/pull/677
+
+
+**Full Changelog**: https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/compare/0.0.675...0.0.676
+
+
 ## 0.0.675
 
 Minor release with many small, but great improvements 👏
