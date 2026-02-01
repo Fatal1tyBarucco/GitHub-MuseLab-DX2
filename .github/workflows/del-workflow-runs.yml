@@ -1,5 +1,8 @@
 name: Delete old workflow runs
 on:
+  pull_request:
+    types:
+      - closed
   schedule:
     # Run weekly, at 00:00 on mondays.
     - cron: '0 0 * * 1'
