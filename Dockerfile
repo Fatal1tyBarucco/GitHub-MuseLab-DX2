@@ -1,4 +1,4 @@
-FROM python:3.15.0a5-slim
+FROM python:3.15.0a6-slim
 
 LABEL org.opencontainers.image.source="https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2"
 
