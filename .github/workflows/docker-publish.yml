@@ -46,7 +46,7 @@ jobs:
       # https://github.com/sigstore/cosign-installer
       - name: Install Cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@v4.0.0
+        uses: sigstore/cosign-installer@v4.1.0
         with:
           cosign-release: 'v2.1.1'
       - name: Check install!
@@ -80,7 +80,7 @@ jobs:
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
         id: build-and-push
-        uses: docker/build-push-action@v6 # v6.15.0
+        uses: docker/build-push-action@v7 # v6.15.0
         with:
           context: .
           sbom: ${{ github.event_name != 'pull_request' }}
