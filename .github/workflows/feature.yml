@@ -1,17 +1,15 @@
 name: Feature Test
+
 on:
-    push:
-        branches:
-            - feature/**
-            - main
-        paths-ignore:
-            - 'CHANGELOG.md'
-            - 'README.md'
+  push:
+    branches:
+      - feature/**
+      - main
+
 jobs:
-    feature-test:
-        name: "Feature Test"
-        uses: ./.github/workflows/feature-test.yml
-        secrets:
-            dev-hub-auth-url: "${{ secrets.DEV_HUB_AUTH_URL }}"
-            gh-email: "${{ secrets.GH_EMAIL }}"
-            github-token: "${{ secrets.GITHUB_TOKEN }}"
+  feature-test:
+    uses: ./.github/workflows/feature-test.yml
+    secrets:
+      gh-email: ${{ secrets.GH_EMAIL }}
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
