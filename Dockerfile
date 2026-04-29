@@ -2,44 +2,81 @@ FROM python:3.13.3-slim
 
 LABEL org.opencontainers.image.source="https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2"
 
-# Install sfdx
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y gnupg wget curl git
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-RUN apt-get update
-# RUN apt-get install -y nodejs
-RUN apt-get install nsolid -y
-RUN npm install --global npm
-RUN npm install --global jq
-RUN npm install --global commander
-RUN npm install --global @salesforce/cli@latest
+# Evita prompts interativos
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Install Salesforce CLI plugins:
+# Shell robusto
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# -----------------------------
+# System dependencies
+# -----------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gnupg \
+    wget \
+    curl \
+    git \
+    ca-certificates \
+    jq \
+    && rm -rf /var/lib/apt/lists/*
+
+# -----------------------------
+# Node.js (oficial - estável)
+# -----------------------------
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
+    && node -v && npm -v
+
+# ❌ NÃO atualizar npm via npm (removido)
+
+# -----------------------------
+# Global npm packages (válidos)
+# -----------------------------
+RUN npm install -g \
+    commander \
+    @salesforce/cli@latest
+
+# Salesforce plugins
 RUN sf plugins install @salesforce/sfdx-scanner
 
-# Install GitHub CLI
-RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg;
-RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null;
-RUN apt-get install -y gh
+# -----------------------------
+# GitHub CLI
+# -----------------------------
+RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+    | gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg && \
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+    > /etc/apt/sources.list.d/github-cli.list && \
+    apt-get update && apt-get install -y gh && \
+    rm -rf /var/lib/apt/lists/*
 
-# Install CumulusCI
-RUN npm install -g pip
-RUN pip install --no-cache-dir --upgrade pip pip-tools
-RUN pip --no-cache-dir install cumulusci cookiecutter
+# -----------------------------
+# Python tooling
+# -----------------------------
+RUN python -m pip install --no-cache-dir --upgrade pip pip-tools && \
+    pip install --no-cache-dir cumulusci cookiecutter
 
-# Copy devhub auth script and make it executable
+# -----------------------------
+# DevHub script
+# -----------------------------
 COPY devhub.sh /usr/local/bin/devhub.sh
 RUN chmod +x /usr/local/bin/devhub.sh
 
-# Create d2x user
-RUN useradd -r -m -s /bin/bash -c "D2X User" d2x
+# -----------------------------
+# User setup
+# -----------------------------
+RUN useradd -m -s /bin/bash d2x
 
-# Setup PATH
-RUN echo 'export PATH=~/.local/bin:$PATH' >> /root/.bashrc
-RUN echo 'export PATH=~/.local/bin:$PATH' >> /home/d2x/.bashrc
-RUN echo '/usr/local/bin/devhub.sh' >> /root/.bashrc
-RUN echo '/usr/local/bin/devhub.sh' >> /home/d2x/.bashrc
+# PATH config
+ENV PATH="/home/d2x/.local/bin:${PATH}"
+
+# Bash init
+RUN echo '/usr/local/bin/devhub.sh' >> /root/.bashrc && \
+    echo '/usr/local/bin/devhub.sh' >> /home/d2x/.bashrc
+
+# Permissões
+RUN chown -R d2x:d2x /home/d2x
 
 USER d2x
+WORKDIR /home/d2x
+
 CMD ["bash"]
