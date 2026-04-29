@@ -1,21 +1,47 @@
 name: Delete old workflow runs
+
 on:
   pull_request:
-    types:
-      - closed
+    types: [closed]
   schedule:
-    # Run weekly, at 00:00 on mondays.
     - cron: '0 0 * * 1'
+
 jobs:
-  del_runs:
+  cleanup:
     runs-on: ubuntu-latest
+
     permissions:
       actions: write
+      contents: read
+
     steps:
-      - name: 'Checkout Repository'
-        uses: actions/checkout@v6
-      - name: Delete workflow runs
-        shell: bash
+      - name: Delete old workflow runs
         env:
-           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: gh run --limit 10 list --json databaseId  -q '.[].databaseId' | xargs -IID gh api "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" -X DELETE
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+
+          echo "Repository: $REPO"
+
+          # Lista runs antigos (somente completed para segurança)
+          RUN_IDS=$(gh run list \
+            --limit 50 \
+            --json databaseId,status \
+            --jq '.[] | select(.status=="completed") | .databaseId')
+
+          if [ -z "$RUN_IDS" ]; then
+            echo "No workflow runs to delete."
+            exit 0
+          fi
+
+          echo "Deleting runs..."
+
+          for ID in $RUN_IDS; do
+            echo "Deleting run $ID"
+            gh api \
+              -X DELETE \
+              "repos/$REPO/actions/runs/$ID" \
+              || echo "Failed to delete $ID"
+          done
