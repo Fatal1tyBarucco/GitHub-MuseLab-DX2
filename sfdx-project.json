@@ -6,5 +6,5 @@
   "pushPackageDirectoriesSequentially": true,
   "namespace": "",
   "sfdcLoginUrl": "https://wise-panda-qzd7va-dev-ed.my.salesforce.com/",
-  "sourceApiVersion": "59.0"
+  "sourceApiVersion": "65.0"
 }
