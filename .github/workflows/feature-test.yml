@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/muselab-d2x/d2x:stable   # 🔒 evitar latest
+      image: ghcr.io/muselab-d2x/d2x:latest   # 🔒 evitar latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github-token }}
