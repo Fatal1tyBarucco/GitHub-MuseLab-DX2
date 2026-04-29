@@ -82,6 +82,21 @@ jobs:
         run: |
           set -e
           cci org default feature
+      
+      # -----------------------------
+      # Configure GitHub service
+      # -----------------------------
+      - name: Configure GitHub service for CCI
+        run: |
+          set -e
+
+          cci service connect github <<EOF
+          {
+            "username": "${{ github.actor }}",
+            "token": "${{ secrets.GITHUB_TOKEN }}",
+            "email": "${{ secrets.GH_EMAIL }}"
+          }
+          EOF
 
       # -----------------------------
       # Run Feature Tests
