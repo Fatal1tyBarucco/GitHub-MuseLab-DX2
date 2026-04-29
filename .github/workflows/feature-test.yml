@@ -23,6 +23,7 @@ jobs:
 
     container:
       image: ghcr.io/muselab-d2x/d2x:latest   # 🔒 evitar latest
+      options: --user 0
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github-token }}
