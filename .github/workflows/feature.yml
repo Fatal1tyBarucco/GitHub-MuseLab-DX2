@@ -5,18 +5,11 @@ on:
     branches:
       - feature/**
       - main
-    paths-ignore:
-      - 'CHANGELOG.md'
-      - 'README.md'
-
-concurrency:
-  group: feature-test-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   feature-test:
-    name: Feature Test
-
     uses: ./.github/workflows/feature-test.yml
-
-    secrets: inherit
+    secrets:
+      gh-email: ${{ secrets.GH_EMAIL }}
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
