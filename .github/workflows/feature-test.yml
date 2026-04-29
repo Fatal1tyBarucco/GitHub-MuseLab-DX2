@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/muselab-d2x/d2x:latest   # 🔒 evitar latest
+      image: ghcr.io/muselab-d2x/d2x:latest
       options: --user 0
       credentials:
         username: ${{ github.actor }}
@@ -44,28 +44,10 @@ jobs:
       - name: Validate DevHub auth inputs
         run: |
           set -e
-
           if [[ -z "$DEV_HUB_AUTH_URL" && -z "$DEV_HUB_USERNAME" ]]; then
             echo "ERROR: DevHub credentials not provided"
             exit 1
           fi
-
-      # -----------------------------
-      # Setup GitHub service (seguro)
-      # -----------------------------
-      - name: Configure CumulusCI GitHub service
-        run: |
-          set -e
-
-          cat <<EOF > github-service.json
-          {
-            "username": "${{ github.actor }}",
-            "token": "${{ secrets.github-token }}",
-            "email": "${{ secrets.gh-email }}"
-          }
-          EOF
-
-          export CUMULUSCI_SERVICE_github="$(cat github-service.json)"
 
       # -----------------------------
       # Autenticação DevHub
@@ -82,28 +64,20 @@ jobs:
         run: |
           set -e
           cci org default feature
-      
-      # -----------------------------
-      # Configure GitHub service
-      # -----------------------------
-      - name: Configure GitHub service for CCI
-        run: |
-          set -e
-
-          cci service connect github <<EOF
-          {
-            "username": "${{ github.actor }}",
-            "token": "${{ secrets.GITHUB_TOKEN }}",
-            "email": "${{ secrets.GH_EMAIL }}"
-          }
-          EOF
 
       # -----------------------------
-      # Run Feature Tests
+      # Run Feature Test (com GitHub service correto)
       # -----------------------------
       - name: Run Feature Test
         run: |
           set -e
+
+          export CUMULUSCI_SERVICE_github='{
+            "username": "${{ github.actor }}",
+            "token": "${{ secrets.github-token }}",
+            "email": "${{ secrets.gh-email }}"
+          }'
+
           cci flow run ci_feature
 
       # -----------------------------
