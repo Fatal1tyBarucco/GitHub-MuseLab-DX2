@@ -12,4 +12,4 @@ jobs:
     - name: 🎉 Changelog Update 📄
       uses: Fatal1tyBarucco/changelog_update@main
       with:
-        token: ${{ secrets.GH_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
