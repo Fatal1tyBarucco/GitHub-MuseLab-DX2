@@ -1,0 +1,13 @@
+.input {
+    padding: 12px;
+}
+
+.result {
+    padding: 16px 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f3f2f2;
+    border-radius: 4px;
+    margin: 12px;
+}

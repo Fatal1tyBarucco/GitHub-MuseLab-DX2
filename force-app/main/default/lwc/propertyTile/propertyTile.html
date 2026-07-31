@@ -1,0 +1,19 @@
+<template>
+    <div class="property-tile" onclick={handleTileClick}>
+        <div style={thumbnailStyle}>
+            <div class="lower-third">
+                <h1 class="truncate">{property.Title__c}</h1>
+                <div>{property.City__c}</div>
+                <div>Beds: {property.Beds__c}&nbsp;&nbsp;&nbsp;Baths: {property.Baths__c}</div>
+                <div>{formattedPrice}</div>
+            </div>
+            <lightning-button-icon
+                icon-name="utility:zoomin"
+                variant="bare-inverse"
+                size="medium"
+                onclick={handleNavigateToRecord}
+                class="open-button">
+            </lightning-button-icon>
+        </div>
+    </div>
+</template>

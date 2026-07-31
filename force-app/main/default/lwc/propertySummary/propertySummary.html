@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <div slot="title">
+            <lightning-icon icon-name="standard:household" size="small"></lightning-icon>
+            <span class="title">Summary</span>
+        </div>
+        <div slot="actions">
+            <lightning-button-icon
+                icon-name="utility:edit"
+                variant="bare"
+                alternative-text="Edit Record"
+                onclick={handleEdit}>
+            </lightning-button-icon>
+        </div>
+
+        <template lwc:if={hasRecord}>
+            <img src={thumbnail} alt="Property thumbnail" />
+            <div class="summary">
+                <p>{address},&nbsp;{city}</p>
+                <p>{beds} bedrooms, {baths} bathrooms</p>
+                <p>On the market since {dateListed}</p>
+                <h3>{formattedPrice}</h3>
+            </div>
+        </template>
+
+        <template lwc:else>
+            <div class="select slds-text-color--weak">
+                Select a property
+            </div>
+        </template>
+    </lightning-card>
+</template>

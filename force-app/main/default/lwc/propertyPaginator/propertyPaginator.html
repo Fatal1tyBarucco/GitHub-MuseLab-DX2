@@ -1,0 +1,25 @@
+<template>
+    <div class="paginator-container">
+        <div class="paginator-left">
+            <template lwc:if={hasPrevious}>
+                <lightning-button-icon
+                    icon-name="utility:left"
+                    variant="border"
+                    onclick={handlePrevious}
+                    alternative-text="Previous page">
+                </lightning-button-icon>
+            </template>
+        </div>
+        <div class="paginator-center">{summaryText}</div>
+        <div class="paginator-right">
+            <template lwc:if={hasNext}>
+                <lightning-button-icon
+                    icon-name="utility:right"
+                    variant="border"
+                    onclick={handleNext}
+                    alternative-text="Next page">
+                </lightning-button-icon>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab label={lightsTabLabel}>
+            <c-smart-lights demo-mode={demoMode}></c-smart-lights>
+        </lightning-tab>
+        <lightning-tab label={locksTabLabel}>
+            <c-smart-locks></c-smart-locks>
+        </lightning-tab>
+        <lightning-tab label={tempTabLabel}>
+            <c-smart-thermostat></c-smart-thermostat>
+        </lightning-tab>
+        <lightning-tab label={alarmTabLabel}>
+            <!-- Alarm component placeholder -->
+        </lightning-tab>
+    </lightning-tabset>
+</template>

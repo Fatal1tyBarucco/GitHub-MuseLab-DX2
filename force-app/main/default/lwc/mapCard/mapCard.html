@@ -1,0 +1,36 @@
+<template>
+    <lightning-card>
+        <div slot="title">
+            <lightning-icon icon-name="utility:checkin" size="small"></lightning-icon>
+            <span class="title">{recordTitle}</span>
+        </div>
+        <div slot="actions">
+            <lightning-button-icon
+                onclick={handleFullScreen}
+                size="large"
+                icon-name="utility:expand"
+                alternative-text="Full screen">
+            </lightning-button-icon>
+        </div>
+
+        <c-map latitude={latitude} longitude={longitude}></c-map>
+
+        <template lwc:if={fullScreen}>
+            <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <c-map latitude={latitude} longitude={longitude}></c-map>
+                </div>
+                <div class="btn slds-modal__close close x-large">
+                    <lightning-button-icon
+                        variant="border-filled"
+                        onclick={handleCloseDialog}
+                        size="large"
+                        icon-name="utility:close"
+                        alternative-text="Close">
+                    </lightning-button-icon>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </template>
+    </lightning-card>
+</template>
