@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: action-release
         id: release
-        uses: mateothegreat/action-release@v1.10.0
+        uses: mateothegreat/action-release@0.0.12
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           owner: Fatal1tyBarucco
