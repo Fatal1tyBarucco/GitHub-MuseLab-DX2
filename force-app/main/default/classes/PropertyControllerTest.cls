@@ -1,7 +1,7 @@
 @isTest
 public class PropertyControllerTest {
     
-    static testMethod void testFindAll() {
+    static @IsTest void testFindAll() {
         Boolean success = true;
         try {
             Property__c p = new Property__c(Location__Latitude__s=-71.110448,Location__Longitude__s=42.360642);
@@ -14,7 +14,7 @@ public class PropertyControllerTest {
         }
     }
 
-    static testMethod void testFindById() {
+    static @IsTest void testFindById() {
         Boolean success = true;
         try {
             Property__c p = new Property__c(Location__Latitude__s=-71.110448,Location__Longitude__s=42.360642);
@@ -27,7 +27,7 @@ public class PropertyControllerTest {
         }
     }
 
-    static testMethod void getAvailableProperties() {
+    static @IsTest void getAvailableProperties() {
         Boolean success = true;
         try {
             Property__c p = new Property__c(Location__Latitude__s=-71.110448,Location__Longitude__s=42.360642);
@@ -40,7 +40,7 @@ public class PropertyControllerTest {
         }
     }
 
-    static testMethod void getSimilarProperties() {
+    static @IsTest void getSimilarProperties() {
         Boolean success = true;
         try {
             Property__c p = new Property__c(Location__Latitude__s=-71.110448,Location__Longitude__s=42.360642);

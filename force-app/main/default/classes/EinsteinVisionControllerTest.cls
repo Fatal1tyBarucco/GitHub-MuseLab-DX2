@@ -1,7 +1,7 @@
 @isTest
 public class EinsteinVisionControllerTest {
     
-    static testMethod void testPredict() {
+    static @IsTest void testPredict() {
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
@@ -16,7 +16,7 @@ public class EinsteinVisionControllerTest {
         }
     }
     
-    static testMethod void testGetDataSets() {
+    static @IsTest void testGetDataSets() {
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
@@ -31,7 +31,7 @@ public class EinsteinVisionControllerTest {
         }
     }
 
-    static testMethod void testGetModelByDataset() {
+    static @IsTest void testGetModelByDataset() {
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
@@ -45,7 +45,7 @@ public class EinsteinVisionControllerTest {
         }
     }
 
-    static testMethod void testDeleteDataset() {
+    static @IsTest void testDeleteDataset() {
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
@@ -59,7 +59,7 @@ public class EinsteinVisionControllerTest {
         }
     }
 
-    static testMethod void testCreateDataset() {
+    static @IsTest void testCreateDataset() {
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
@@ -73,7 +73,7 @@ public class EinsteinVisionControllerTest {
         }
     }
 
-    static testMethod void testTrainModel() {
+    static @IsTest void testTrainModel() {
         insert new Dreamhouse_Settings__c(Einstein_Vision_Email__c = 'user@host.com');
         Boolean success = true;
         try {
@@ -87,7 +87,7 @@ public class EinsteinVisionControllerTest {
         }
     }
     
-    static testMethod void JTWIssue() {
+    static @IsTest void JTWIssue() {
         Boolean success = true;
         try {
             JWT jwt = new JWT('RS256');

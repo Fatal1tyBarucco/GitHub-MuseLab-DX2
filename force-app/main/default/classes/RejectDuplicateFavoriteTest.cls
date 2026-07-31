@@ -13,7 +13,7 @@ public class RejectDuplicateFavoriteTest {
                         TimeZoneSidKey='America/Los_Angeles', UserName=getUserNamePrefix() + 'test@test.com');
     }
 
-    static testMethod void acceptNonDuplicate() {
+    static @IsTest void acceptNonDuplicate() {
         Boolean success = true;
         try {
             Property__c p = new Property__c();
@@ -30,7 +30,7 @@ public class RejectDuplicateFavoriteTest {
         }
     }
 
-    static testMethod void rejectDuplicate() {
+    static @IsTest void rejectDuplicate() {
         Boolean success = true;
         try {
             Property__c p = new Property__c();

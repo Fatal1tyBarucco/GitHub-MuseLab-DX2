@@ -1,7 +1,7 @@
 @isTest
 public class SlackOpportunityPublisherTest {
     
-    static testMethod void testPost() {
+    static @IsTest void testPost() {
         Boolean success = true;
         try {
             Opportunity opp = new Opportunity(Name='test opportunity', StageName='Close Won', CloseDate=date.today());

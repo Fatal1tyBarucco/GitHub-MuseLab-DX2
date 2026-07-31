@@ -1,7 +1,7 @@
 @isTest
 public class BotTest {
     
-    static testMethod void testBotController() {
+    static @IsTest void testBotController() {
 		Bot_Command__c bc = new Bot_Command__c(Sample_Utterance__c='help lightning', apex_class__c='HandlerHelpTopic', pattern__c='help (.*)');
         insert bc;
         BotResponse response = BotController.submit('help lightning', null, null, null);
@@ -10,13 +10,13 @@ public class BotTest {
         System.assert(response.messages[0].items.size() > 0);
     }
 
-    static testMethod void testHello() {
+    static @IsTest void testHello() {
         BotHandler handler = new HandlerHello();
         BotResponse response = handler.handle('', null, null, null, null);
         System.assert(response.messages[0].messageText == 'Hi there!');
     }
 
-    static testMethod void testAddTwoNumbers() {
+    static @IsTest void testAddTwoNumbers() {
         BotHandler handler = new HandlerAddTwoNumbers();
         BotResponse response = handler.handle('', null, null, null, null);
         Map<String, String> session = response.session;
@@ -26,19 +26,19 @@ public class BotTest {
         System.assert(response.messages[0].messageText == '1 + 2 = 3');
     }
     
-    static testMethod void testCostCenter() {
+    static @IsTest void testCostCenter() {
         BotHandler handler = new HandlerCostCenter();
         BotResponse response = handler.handle('', null, null, null, null);
         System.assert(response.messages[0].messageText == 'Your cost center is 21852');
     }
     
-    static testMethod void testEmployeeId() {
+    static @IsTest void testEmployeeId() {
         BotHandler handler = new HandlerEmployeeId();
         BotResponse response = handler.handle('', null, null, null, null);
         System.assert(response.messages[0].messageText == 'Your employee id is 9854');
     }
 
-    static testMethod void testFindAccount() {
+    static @IsTest void testFindAccount() {
 		Account a = new Account(Name='TestAccount');
 		insert a;
         BotHandler handler = new HandlerFindAccount();
@@ -46,7 +46,7 @@ public class BotTest {
         System.assert(response.messages[0].records.size() == 1);
     }
     
-    static testMethod void testFindContact() {
+    static @IsTest void testFindContact() {
 		Contact c = new Contact(LastName='TestContact');
         insert c;
         BotHandler handler = new HandlerFindContact();
@@ -54,7 +54,7 @@ public class BotTest {
         System.assert(response.messages[0].records.size() == 1);
     }
     
-	static testMethod void testHelp() {
+	static @IsTest void testHelp() {
 		Bot_Command__c bc = new Bot_Command__c(Sample_Utterance__c='Hello', apex_class__c='HelloHandler', pattern__c='Hello');
         insert bc;
         BotHandler handler = new HandlerHelp();
@@ -62,7 +62,7 @@ public class BotTest {
         System.assert(response.messages[0].items.size() == 1);
     }
     
-	static testMethod void testHelpTopic() {
+	static @IsTest void testHelpTopic() {
         BotHandler handler = new HandlerHelpTopic();
         BotResponse response = handler.handle('', null, null, null, null);
         Map<String, String> session = response.session;
@@ -79,7 +79,7 @@ public class BotTest {
         System.assert(response.messages[0].items.size() > 0);
     }
     
-	static testMethod void testMyOpenCases() {
+	static @IsTest void testMyOpenCases() {
 		Case c = new Case(Subject='TestCase');
 		insert c;
         BotHandler handler = new HandlerMyOpenCases();
@@ -87,7 +87,7 @@ public class BotTest {
         System.assert(response.messages[0].records.size() == 1);
     }
 
-	static testMethod void testTopOpportunities() {
+	static @IsTest void testTopOpportunities() {
 		Account a = new Account(Name='TestAccount');
 		insert a;
 		Opportunity o = new Opportunity(Name='TestOpportunity', AccountId=a.id, StageName='Prospecting', CloseDate=System.today().addMonths(1));
@@ -97,7 +97,7 @@ public class BotTest {
         System.assert(response.messages[0].records.size() == 1);
     }
 
-	static testMethod void testTravelApproval() {
+	static @IsTest void testTravelApproval() {
         BotHandler handler = new HandlerTravelApproval();
         BotResponse response = handler.handle('', null, null, null, null);
         Map<String, String> session = response.session;
@@ -109,19 +109,19 @@ public class BotTest {
         System.assert(response.messages[0].messageText.length() > 0);
     }
 
-	static testMethod void testPipeline() {
+	static @IsTest void testPipeline() {
         BotHandler handler = new HandlerPipeline();
         BotResponse response = handler.handle('', null, null, null, null);
         System.assert(response.messages[0].imageURL != null);
     }
 
-	static testMethod void testQuarter() {
+	static @IsTest void testQuarter() {
         BotHandler handler = new HandlerQuarter();
         BotResponse response = handler.handle('', null, null, null, null);
         System.assert(response.messages[0].imageURL != null);
     }
 
-    static testMethod void testNext() {
+    static @IsTest void testNext() {
 		Account a = new Account(Name='TestAccount');
 		insert a;
 		Opportunity o = new Opportunity(Name='TestOpportunity', AccountId=a.id, StageName='Prospecting', CloseDate=System.today().addMonths(1));
@@ -133,7 +133,7 @@ public class BotTest {
         System.assert(response.messages.size() > 1);
     }
 
-    static testMethod void testSOQL() {
+    static @IsTest void testSOQL() {
 		Account a = new Account(Name='TestAccount');
 		insert a;
         BotHandler handler = new HandlerSOQL();
@@ -141,7 +141,7 @@ public class BotTest {
         System.assert(response.messages[0].records.size() == 1);
     }
     
-    static testMethod void testFindPropertiesByBedrooms() {
+    static @IsTest void testFindPropertiesByBedrooms() {
         Property__c p = new Property__c(Name='TestProperty', Beds__c=3, City__c='Boston');
         insert p;
         BotHandler handler = new HandlerFindPropertiesByBedrooms();
@@ -149,7 +149,7 @@ public class BotTest {
         System.assert(response.messages[0].records.size() == 1);
     }
 
-    static testMethod void testFindProperties() {
+    static @IsTest void testFindProperties() {
         Property__c p = new Property__c(Name='TestProperty', Price__c=450000, City__c='Boston');
         insert p;
         BotHandler handler = new HandlerFindProperties();

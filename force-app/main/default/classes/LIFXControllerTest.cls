@@ -1,7 +1,7 @@
 @isTest
 public class LIFXControllerTest {
     
-    static testMethod void testGetLights() {
+    static @IsTest void testGetLights() {
         Boolean success = true;
         try {
 	        LIFXController.getLights();
@@ -12,7 +12,7 @@ public class LIFXControllerTest {
         }
     }
 
-    static testMethod void testSetPower() {
+    static @IsTest void testSetPower() {
         Boolean success = true;
         try {
 	        LIFXController.setPower('1', true);
@@ -23,7 +23,7 @@ public class LIFXControllerTest {
         }
     }
 
-    static testMethod void testSetBrightness() {
+    static @IsTest void testSetBrightness() {
         Boolean success = true;
         try {
 	        LIFXController.setBrightness('1', 1);
