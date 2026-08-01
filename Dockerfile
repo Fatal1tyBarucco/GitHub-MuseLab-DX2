@@ -12,11 +12,10 @@ RUN apt-get update && apt-get upgrade -y && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copy d2x source and install
-COPY pyproject.toml requirements.txt /usr/local/d2x/
+COPY pyproject.toml /usr/local/d2x/
 COPY d2x /usr/local/d2x/d2x
 
 RUN cd /usr/local/d2x && \
-  pip install --no-cache-dir -r requirements.txt && \
   pip install --no-cache-dir .
 
 # Copy CumulusCI pyproject and install
