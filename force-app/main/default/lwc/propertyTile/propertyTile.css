@@ -1,0 +1,57 @@
+:host {
+    display: block;
+    cursor: pointer;
+}
+
+.property-tile {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.property-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.property-tile > div {
+    background-size: cover;
+    background-position: center;
+    height: 220px;
+    position: relative;
+}
+
+.lower-third {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+}
+
+.lower-third h1 {
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+}
+
+.lower-third div {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.open-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}

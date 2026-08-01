@@ -1,0 +1,19 @@
+.summary {
+    padding: 12px;
+}
+
+.summary p {
+    margin: 4px 0;
+    color: #706e6b;
+}
+
+.summary h3 {
+    margin: 12px 0 0;
+    font-size: 1.5rem;
+    color: #080707;
+}
+
+.select {
+    padding: 24px;
+    text-align: center;
+}

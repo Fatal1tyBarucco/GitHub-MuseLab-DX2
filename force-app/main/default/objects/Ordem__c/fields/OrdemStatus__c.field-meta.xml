@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrdemStatus__c</fullName>
+    <description>status da execução da ordem</description>
+    <externalId>false</externalId>
+    <inlineHelpText>status da execução da ordem</inlineHelpText>
+    <label>Status</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aguardando</fullName>
+                <default>true</default>
+                <label>Aguardando</label>
+            </value>
+            <value>
+                <fullName>Executada</fullName>
+                <default>false</default>
+                <label>Executada</label>
+            </value>
+            <value>
+                <fullName>Cancelada</fullName>
+                <default>false</default>
+                <label>Cancelada</label>
+            </value>
+            <value>
+                <fullName>Venda com Lucro</fullName>
+                <default>false</default>
+                <label>Venda com Lucro</label>
+            </value>
+            <value>
+                <fullName>Venda com Prejuízo</fullName>
+                <default>false</default>
+                <label>Venda com Prejuízo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

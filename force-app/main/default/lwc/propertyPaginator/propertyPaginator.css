@@ -1,0 +1,19 @@
+.paginator-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.paginator-left,
+.paginator-right {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.paginator-center {
+    text-align: center;
+    color: #706e6b;
+    font-size: 0.875rem;
+}
