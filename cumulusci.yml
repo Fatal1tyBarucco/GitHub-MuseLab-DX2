@@ -3,7 +3,7 @@ project:
     name: GitHub-MuseLab-DX2
     package:
         name: GitHub-MuseLab-DX2
-        namespace: Fatal1ty
+        namespace: ''
         api_version: '67.0'
     git:
         default_branch: 'main'
