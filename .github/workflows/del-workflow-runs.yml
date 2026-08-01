@@ -1,8 +1,6 @@
 name: Delete old workflow runs
 
 on:
-  pull_request:
-    types: [closed]
   schedule:
     - cron: '0 0 * * 1'
   workflow_dispatch:
@@ -10,76 +8,70 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
-
     permissions:
       actions: write
       contents: read
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
       - name: Delete old workflow runs
-        env:
-          GH_TOKEN: *** secrets.CCI_GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
+        uses: actions/github-script@v7
+        with:
+          github-token: *** secrets.CCI_GITHUB_TOKEN }}
+          script: |
+            const daysToKeep = 30;
+            const cutoffDate = new Date();
+            cutoffDate.setDate(cutoffDate.getDate() - daysToKeep);
 
-          REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
-          echo "Repository: $REPO"
+            console.log(`Deleting workflow runs older than ${cutoffDate.toISOString()}`);
 
-          # Lista runs antigos (somente completed para segurança)
-          # Mantém os últimos 10 runs de cada workflow
-          echo "Fetching workflow runs..."
-          RUN_IDS=$(gh run list \
-            --limit 100 \
-            --json databaseId,status,conclusion,name \
-            --jq '.[] | select(.status=="completed" and (.conclusion=="success" or .conclusion=="failure" or .conclusion=="cancelled")) | .databaseId' \
-            2>/dev/null || echo "")
+            let totalDeleted = 0;
+            let totalFailed = 0;
 
-          if [ -z "$RUN_IDS" ]; then
-            echo "No workflow runs to delete."
-            exit 0
-          fi
+            // List all workflows
+            const workflows = await github.rest.actions.listRepoWorkflows({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
 
-          # Conta runs para deletar
-          RUN_COUNT=$(echo "$RUN_IDS" | wc -l)
-          echo "Found $RUN_COUNT runs to delete"
+            for (const workflow of workflows.data.workflows) {
+              console.log(`\nProcessing workflow: ${workflow.name}`);
 
-          # Deleta runs com retry
-          DELETED=0
-          FAILED=0
+              // List runs for this workflow
+              const runs = await github.rest.actions.listWorkflowRuns({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: workflow.id,
+                per_page: 100,
+                status: 'completed'
+              });
 
-          for ID in $RUN_IDS; do
-            echo "Deleting run $ID..."
-            for attempt in 1 2 3; do
-              if gh api -X DELETE "repos/$REPO/actions/runs/$ID" 2>/dev/null; then
-                echo "  ✅ Deleted run $ID"
-                DELETED=$((DELETED + 1))
-                break
-              else
-                echo "  ⚠️ Attempt $attempt failed for run $ID"
-                if [ $attempt -lt 3 ]; then
-                  sleep $((attempt * 2))
-                else
-                  echo "  ❌ Failed to delete run $ID after 3 attempts"
-                  FAILED=$((FAILED + 1))
-                fi
-              fi
-            done
-          done
+              for (const run of runs.data.workflow_runs) {
+                const runDate = new Date(run.created_at);
 
-          echo ""
-          echo "=== Cleanup Summary ==="
-          echo "Total runs found: $RUN_COUNT"
-          echo "Successfully deleted: $DELETED"
-          echo "Failed to delete: $FAILED"
+                if (runDate < cutoffDate) {
+                  try {
+                    await github.rest.actions.deleteWorkflowRun({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      run_id: run.id
+                    });
+                    console.log(`  ✅ Deleted run ${run.id} (${run.created_at})`);
+                    totalDeleted++;
+                  } catch (error) {
+                    console.log(`  ❌ Failed to delete run ${run.id}: ${error.message}`);
+                    totalFailed++;
+                  }
+                }
+              }
+            }
 
-          if [ $FAILED -gt 0 ]; then
-            echo ""
-            echo "⚠️ Some runs could not be deleted."
-            echo "This may be due to:"
-            echo "- Insufficient permissions"
-            echo "- Rate limiting"
-            echo "- Protected workflow runs"
-          fi
+            console.log(`\n=== Summary ===`);
+            console.log(`Total deleted: ${totalDeleted}`);
+            console.log(`Total failed: ${totalFailed}`);
 
       - name: Generate summary
         if: always()

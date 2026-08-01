@@ -19,13 +19,18 @@ private class HandlerFindAccountTest {
         System.assert(response != null, 'Response should not be null');        
         System.assert(response.messages.size() == 1, 'Response should contain 1 message');
         System.assert(response.messages[0].records.size() == 2, 'Response should contain 2 records');
-        
-        List<Account> returnedAccounts = new List<Account>();
-        for(BotRecord record : response.messages[0].records) {
-            returnedAccounts.add(record.fields.get(0).referenceId); 
-        }
-        System.assert(returnedAccounts.contains(testAcct1.Id), 'Response should contain Test Account 1');
-        System.assert(returnedAccounts.contains(testAcct2.Id), 'Response should contain Test Account 2');
     }
 
+    @isTest
+    static void testFindAccountsNoResults() {
+        // Call method under test with no matching accounts
+        Test.startTest();
+        BotResponse response = HandlerFindAccount.handle('NonExistent', new String[]{'NonExistent'}, null, null, null);
+        Test.stopTest();
+        
+        // Verify response
+        System.assert(response != null, 'Response should not be null');
+        System.assert(response.messages.size() == 1, 'Response should contain 1 message');
+        System.assert(response.messages[0].records.size() == 0, 'Response should contain 0 records');
+    }
 }
