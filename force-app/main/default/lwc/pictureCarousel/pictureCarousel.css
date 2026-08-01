@@ -1,0 +1,36 @@
+.gallery {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.filmstrip {
+    display: flex;
+    transition: margin-left 0.3s ease;
+}
+
+.slide {
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev {
+    left: 8px;
+}
+
+.next {
+    right: 8px;
+}
+
+.x-large {
+    /* Additional styling for larger screens */
+}

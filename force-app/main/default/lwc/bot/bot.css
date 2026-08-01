@@ -1,0 +1,43 @@
+.bot-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.message-row {
+    display: flex;
+    padding: 8px 12px;
+}
+
+.message-icon {
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-content p {
+    margin: 4px 0;
+}
+
+.message-button {
+    margin: 4px 4px 4px 0;
+}
+
+.list-item {
+    padding: 4px 0;
+}
+
+.footer {
+    border-top: 1px solid #dddbda;
+    padding: 8px;
+    background-color: #f3f2f2;
+}

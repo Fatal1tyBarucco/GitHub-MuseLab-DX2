@@ -1,0 +1,27 @@
+<template>
+    <div>
+        <div class="input">
+            <lightning-input
+                type="number"
+                label="Principal:"
+                value={principal}
+                onchange={handlePrincipalChange}>
+            </lightning-input>
+            <lightning-combobox
+                label="Years:"
+                value={years}
+                options={yearOptions}
+                onchange={handleYearsChange}>
+            </lightning-combobox>
+            <lightning-input
+                type="text"
+                label="Rate:"
+                value={rate}
+                onchange={handleRateChange}>
+            </lightning-input>
+        </div>
+        <div class="result">
+            Monthly Payment: {formattedMonthlyPayment}
+        </div>
+    </div>
+</template>

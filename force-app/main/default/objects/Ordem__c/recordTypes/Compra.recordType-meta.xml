@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compra</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>LC_Ordem</compactLayoutAssignment>
+    <description>Operação do tipo Compra onde é adiquirido o ativo primário</description>
+    <label>Compra</label>
+    <picklistValues>
+        <picklist>OrdemStatus__c</picklist>
+        <values>
+            <fullName>Aguardando</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Executada</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tipo__c</picklist>
+        <values>
+            <fullName>Compra</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

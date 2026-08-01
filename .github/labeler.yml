@@ -1,0 +1,51 @@
+# Label rules for GitHub-MuseLab-DX2
+# Docs: https://github.com/actions/labeler
+
+# Salesforce / Apex
+salesforce:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'force-app/**'
+          - 'sfdx-project.json'
+          - 'cumulusci.yml'
+          - 'orgs/**'
+
+# Docker / DevOps
+docker:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Dockerfile'
+          - '.devcontainer/**'
+          - 'docker-compose*.yml'
+
+# GitHub Actions / CI
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+# Dependencies
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+          - 'requirements.txt'
+
+# Documentation
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - 'docs/**'
+          - 'LICENSE'
+
+# Config / Rulesets
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'config/**'
+          - 'rulesets/**'
+          - '.pmdCache'
+          - 'codecov.yml'
+          - '.mergify.yml'

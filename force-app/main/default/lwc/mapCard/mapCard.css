@@ -1,0 +1,11 @@
+.slds-modal__container {
+    max-width: 90vw;
+    width: 90vw;
+}
+
+.slds-modal__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1000;
+}
