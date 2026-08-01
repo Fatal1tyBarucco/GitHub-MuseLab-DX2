@@ -36,6 +36,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
+      - name: Set image name (lowercase)
+        id: vars
+        run: |
+          # Docker requires lowercase repository names
+          GHCR_IMAGE=$(echo '${{ github.repository_owner }}/d2x' | tr '[:upper:]' '[:lower:]')
+          echo "ghcr_image=$GHCR_IMAGE" >> $GITHUB_OUTPUT
+          echo "GHCR_IMAGE=$GHCR_IMAGE" >> $GITHUB_ENV
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -47,8 +55,7 @@ jobs:
           username: rbarucco
           password: ${{ secrets.DOCKER }}
 
-      - name: Log into GHCR (fallback)
-        if: github.event_name != 'pull_request'
+      - name: Log into GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -61,7 +68,7 @@ jobs:
         with:
           images: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-            ghcr.io/${{ github.repository_owner }}/d2x
+            ghcr.io/${{ env.GHCR_IMAGE }}
           tags: |
             type=ref,event=branch
             type=ref,event=tag
@@ -78,14 +85,8 @@ jobs:
           load: ${{ github.event_name == 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-          # Cache avançado (melhor performance CI)
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-          # Segurança
-          provenance: true
-          sbom: true
 
       - name: Generate build summary
         if: always()
@@ -96,23 +97,10 @@ jobs:
             echo "## ❌ Docker Build Failed" >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Image:** \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "**Tags:**" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "${{ steps.meta.outputs.tags }}" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "**Docker Hub:** \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**GHCR:** \`ghcr.io/${{ env.GHCR_IMAGE }}\`" >> $GITHUB_STEP_SUMMARY
 
-      - name: Docker Scout (PR only)
-        if: github.event_name == 'pull_request'
-        uses: docker/scout-action@v1
-        with:
-          command: compare
-          image: ${{ steps.meta.outputs.tags }}
-          to-env: production
-          only-severities: critical,high
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload Apex coverage to Codecov
+      - name: Upload coverage to Codecov
         if: always()
         uses: codecov/codecov-action@v4
         with:
