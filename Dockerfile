@@ -20,8 +20,6 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | \
     rm -rf /var/lib/apt/lists/*
 
 # Install CumulusCI using venv
-# NOTE: Using official CumulusCI from PyPI (supports pydantic>=2)
-# The fork muselab-d2x/CumulusCI requires pydantic<2 which conflicts with d2x
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
@@ -43,8 +41,12 @@ RUN echo 'export PATH=/opt/venv/bin:~/.local/bin:$PATH' >> /root/.bashrc && \
 # Stage for browser support
 FROM base AS browser
 
-RUN cci robot install_playwright && \
-    npx playwright install-deps
+# Install Playwright dependencies
+RUN apt-get update && \
+    apt-get install -y wget gnupg2 && \
+    npx playwright install-deps chromium && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Final stage for no browser automation support
 FROM base AS no-browser
