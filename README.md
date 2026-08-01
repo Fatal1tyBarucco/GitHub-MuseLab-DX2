@@ -1,11 +1,14 @@
-
-D2X lets teams deliver repeatable, composable Salesforce products and solutions that align with Salesforce's [Well-Architected Framework](https://architect.salesforce.com/well-architected/overview).
-
-D2X defines a container image for Salesforce development, build, and delivery using CumulusCI and Salesforce CLI. This gives teams a cconsistent runtime environment for automation used in across the entire software product lifecycle.
-
-MuseLab created D2X as the framework for all of our [services engagements](https://muselab.com/services), and we are proud to share it freely with the entire Salesforce ecosystem.
-
-See [D2X documentation](https://d2x.readthedocs.io) for more details on using D2X — or try it yourself right now via [D2X Launchpad](https://launchpad.muselab.com)! 
-
-Stay tuned for details on how to contribute!
-
+# GitHub MuseLab DX2
+#### Fatal1ty GitHub MuseLab DX2 Project
+[![Docker](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/docker-publish.yml)
+[![Docker Image CI](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/docker-image.yml)
+<br>
+[![Production Release](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/release.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/release.yml)
+[![Feature Test](https://github.com/rbaruccojr/GitHub-MuseLab-DX2/actions/workflows/feature.yml/badge.svg)](https://github.com/rbaruccojr/GitHub-MuseLab-DX2/actions/workflows/feature.yml)
+[![2GP Feature Test](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/feature-test.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/feature-test.yml)
+<br>
+[![pmd](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/pmd.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/pmd.yml)
+[![Dependency Review](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/dependency-review.yml)
+[![Delete old workflow runs](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/del-workflow-runs.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/del-workflow-runs.yml)
+<br>
+[![Update Changelog 🎉](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/Fatal1tyBarucco/GitHub-MuseLab-DX2/actions/workflows/update-changelog.yml)
