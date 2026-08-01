@@ -56,7 +56,7 @@ jobs:
                   echo "D2X Docker Image: `${{ inputs.docker_image }}:${{ inputs.docker_tag }}`" >> $GITHUB_STEP_SUMMARY
               shell: bash
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
             - name: Auth to DevHub
               run: /usr/local/bin/devhub.sh
               env:

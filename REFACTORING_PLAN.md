@@ -24,7 +24,7 @@
 | 4 | 🟡 MÉDIO | `d2x/cli/main.py:6` | `import pdb` em código de produção | ASIS: import direto / TOBE: import condicional |
 | 5 | 🟡 MÉDIO | `d2x/parse/sf/auth_url.py:76,100,102` | 3x `type: ignore` sem justificativa | ASIS: type: ignore / TOBE: tipagem correta |
 | 6 | 🟢 BAIXO | `pyproject.toml` | `pyyaml` não listado como dependência | ASIS: ausente / TOBE: adicionar |
-| 7 | 🟢 BAIXO | `cache-d2x-docker.yml`, `prepare.yml` | Ações GitHub deprecated (v3/v4) | ASIS: v3/v4 / TOBE: v5+ |
+| 7 | 🟢 BAIXO | Todos os workflows | Ações GitHub deprecated (Node.js 20) | ASIS: v2-v4 / TOBE: v5/v6 (Node 24) ✅ |
 
 ---
 
@@ -54,3 +54,4 @@
 | 2026-08-01 | Erro #6: Adicionar pyyaml | ✅ Concluído |
 | 2026-08-01 | Erro #7: Atualizar ações deprecated | ✅ Concluído |
 | 2026-08-01 | Erro #8: Deprecations Pydantic | ✅ Concluído |
+| 2026-08-01 | Deprecation warnings Node.js 20 (24 workflows) | ✅ Concluído |

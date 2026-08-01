@@ -68,7 +68,7 @@ jobs:
                 CUMULUSCI_SERVICE_github: '{ "username": "${{ github.actor }}", "token": "${{ secrets.github-token }}", "email": "${{ secrets.gh-email }}" }'
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
 
             - name: Auth to DevHub
               run: /usr/local/bin/devhub.sh
@@ -174,14 +174,14 @@ jobs:
 
             - name: Upload CumulusCI Dependencies History
               if: always()
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                   name: cci-dependencies-history
                   path: cci_dependencies_history.json
 
             - name: Upload CumulusCI Build History
               if: always()
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                   name: cci-build-history
                   path: cci_build_history.json

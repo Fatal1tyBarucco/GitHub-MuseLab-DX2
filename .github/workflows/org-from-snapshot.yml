@@ -59,7 +59,7 @@ jobs:
 
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
             - name: Auth to DevHub
               run: /usr/local/bin/devhub.sh
             - name: Import Devhub For Testing
@@ -82,7 +82,7 @@ jobs:
 
             - name: Upload CumulusCI Dependencies History
               if: always()
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                   name: cci-dependencies-history
                   path: cci_dependencies_history.json

@@ -37,7 +37,7 @@ jobs:
                 CUMULUSCI_SERVICE_github: '{ "username": "${{ github.actor }}", "token": "NOTUSED", "email": "NOTUSED" }'
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4.2.0
+              uses: actions/checkout@v5.2.0
               with:
                   ref: ${{ inputs.branch_name }}
 
