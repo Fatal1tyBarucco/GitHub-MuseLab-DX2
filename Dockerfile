@@ -1,5 +1,7 @@
 # Base stage
-FROM salesforce/cli:latest-full AS base
+# Pin Salesforce CLI version for reproducible builds
+# Check https://hub.docker.com/r/salesforce/cli/tags for available versions
+FROM salesforce/cli:2.50.0-full AS base
 
 LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
 

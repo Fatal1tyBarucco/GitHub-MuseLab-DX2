@@ -5,6 +5,7 @@ on:
     types: [closed]
   schedule:
     - cron: '0 0 * * 1'
+  workflow_dispatch:
 
 jobs:
   cleanup:
@@ -17,31 +18,73 @@ jobs:
     steps:
       - name: Delete old workflow runs
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: *** secrets.CCI_GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
           REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
-
           echo "Repository: $REPO"
 
           # Lista runs antigos (somente completed para segurança)
+          # Mantém os últimos 10 runs de cada workflow
+          echo "Fetching workflow runs..."
           RUN_IDS=$(gh run list \
-            --limit 50 \
-            --json databaseId,status \
-            --jq '.[] | select(.status=="completed") | .databaseId')
+            --limit 100 \
+            --json databaseId,status,conclusion,name \
+            --jq '.[] | select(.status=="completed" and (.conclusion=="success" or .conclusion=="failure" or .conclusion=="cancelled")) | .databaseId' \
+            2>/dev/null || echo "")
 
           if [ -z "$RUN_IDS" ]; then
             echo "No workflow runs to delete."
             exit 0
           fi
 
-          echo "Deleting runs..."
+          # Conta runs para deletar
+          RUN_COUNT=$(echo "$RUN_IDS" | wc -l)
+          echo "Found $RUN_COUNT runs to delete"
+
+          # Deleta runs com retry
+          DELETED=0
+          FAILED=0
 
           for ID in $RUN_IDS; do
-            echo "Deleting run $ID"
-            gh api \
-              -X DELETE \
-              "repos/$REPO/actions/runs/$ID" \
-              || echo "Failed to delete $ID"
+            echo "Deleting run $ID..."
+            for attempt in 1 2 3; do
+              if gh api -X DELETE "repos/$REPO/actions/runs/$ID" 2>/dev/null; then
+                echo "  ✅ Deleted run $ID"
+                DELETED=$((DELETED + 1))
+                break
+              else
+                echo "  ⚠️ Attempt $attempt failed for run $ID"
+                if [ $attempt -lt 3 ]; then
+                  sleep $((attempt * 2))
+                else
+                  echo "  ❌ Failed to delete run $ID after 3 attempts"
+                  FAILED=$((FAILED + 1))
+                fi
+              fi
+            done
           done
+
+          echo ""
+          echo "=== Cleanup Summary ==="
+          echo "Total runs found: $RUN_COUNT"
+          echo "Successfully deleted: $DELETED"
+          echo "Failed to delete: $FAILED"
+
+          if [ $FAILED -gt 0 ]; then
+            echo ""
+            echo "⚠️ Some runs could not be deleted."
+            echo "This may be due to:"
+            echo "- Insufficient permissions"
+            echo "- Rate limiting"
+            echo "- Protected workflow runs"
+          fi
+
+      - name: Generate summary
+        if: always()
+        run: |
+          echo "## 🧹 Workflow Cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository:** ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Run at:** $(date -u)" >> $GITHUB_STEP_SUMMARY

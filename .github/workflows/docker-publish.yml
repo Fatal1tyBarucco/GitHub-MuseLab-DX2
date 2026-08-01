@@ -34,24 +34,34 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
+        uses: docker/setup-buildx-action@v3
 
       - name: Log into Docker Hub
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@v4.5.2
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: rbarucco
           password: ${{ secrets.DOCKER }}
 
+      - name: Log into GHCR (fallback)
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@v6
+        uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            ghcr.io/${{ github.repository_owner }}/d2x
           tags: |
             type=ref,event=branch
             type=ref,event=tag
@@ -59,7 +69,8 @@ jobs:
             type=raw,value=nightly,enable={{is_default_branch}}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v7
+        id: build
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
@@ -76,9 +87,24 @@ jobs:
           provenance: true
           sbom: true
 
+      - name: Generate build summary
+        if: always()
+        run: |
+          if [ "${{ steps.build.outcome }}" == "success" ]; then
+            echo "## ✅ Docker Build Successful" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Docker Build Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Image:** \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Tags:**" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.meta.outputs.tags }}" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: Docker Scout (PR only)
         if: github.event_name == 'pull_request'
-        uses: docker/scout-action@v1.23.1
+        uses: docker/scout-action@v1
         with:
           command: compare
           image: ${{ steps.meta.outputs.tags }}
@@ -87,7 +113,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Apex coverage to Codecov
-        uses: codecov/codecov-action@v7
+        if: always()
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: Apex

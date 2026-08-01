@@ -17,6 +17,7 @@ jobs:
             matrix:
                 target: [no-browser, browser]
                 platform: [linux/amd64, linux/arm64]
+            fail-fast: false
         steps:
             - name: Checkout repository
               uses: actions/checkout@v5
@@ -45,6 +46,7 @@ jobs:
                   echo "IMAGE_NAME=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
             - name: Build and push Docker image
+              id: build
               uses: docker/build-push-action@v6
               with:
                   context: .
@@ -56,9 +58,23 @@ jobs:
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
 
+            - name: Generate build summary
+              if: always()
+              run: |
+                if [ "${{ steps.build.outcome }}" == "success" ]; then
+                  echo "## ✅ Build Successful" >> $GITHUB_STEP_SUMMARY
+                else
+                  echo "## ❌ Build Failed" >> $GITHUB_STEP_SUMMARY
+                fi
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "**Target:** \`${{ matrix.target }}\`" >> $GITHUB_STEP_SUMMARY
+                echo "**Platform:** \`${{ matrix.platform }}\`" >> $GITHUB_STEP_SUMMARY
+                echo "**Tag:** \`${{ env.IMAGE_TAG }}\`" >> $GITHUB_STEP_SUMMARY
+
     merge-manifests:
         needs: build
         runs-on: ubuntu-latest
+        if: success()
         steps:
             - name: Set environment variables
               run: |
@@ -78,19 +94,46 @@ jobs:
 
             - name: Create and push multi-arch manifests
               run: |
+                  echo "Creating multi-arch manifests..."
+                  
                   # For no-browser
+                  echo "Creating no-browser manifest..."
                   docker buildx imagetools create -t ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
                     ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
-                    ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-arm64
+                    ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-arm64 || {
+                    echo "⚠️ Failed to create no-browser manifest"
+                  }
 
                   # For browser
+                  echo "Creating browser manifest..."
                   docker buildx imagetools create -t ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser \
                     ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser \
-                    ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser-arm64
+                    ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser-arm64 || {
+                    echo "⚠️ Failed to create browser manifest"
+                  }
 
             - name: Inspect manifests
               run: |
-                  echo "Inspecting no-browser manifest:"
-                  docker buildx imagetools inspect ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-                  echo "Inspecting browser manifest:"
-                  docker buildx imagetools inspect ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser
+                  echo "=== Inspecting manifests ==="
+                  echo ""
+                  echo "No-browser manifest:"
+                  docker buildx imagetools inspect ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} || {
+                    echo "⚠️ Failed to inspect no-browser manifest"
+                  }
+                  echo ""
+                  echo "Browser manifest:"
+                  docker buildx imagetools inspect ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser || {
+                    echo "⚠️ Failed to inspect browser manifest"
+                  }
+
+            - name: Generate summary
+              if: always()
+              run: |
+                echo "## 🏗️ Multi-Arch Build Complete" >> $GITHUB_STEP_SUMMARY
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "**Image:** \`${{ env.IMAGE_NAME }}\`" >> $GITHUB_STEP_SUMMARY
+                echo "**Tag:** \`${{ env.IMAGE_TAG }}\`" >> $GITHUB_STEP_SUMMARY
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "### Tags created:" >> $GITHUB_STEP_SUMMARY
+                echo "- \`ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}\` (no-browser)" >> $GITHUB_STEP_SUMMARY
+                echo "- \`ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-browser\` (browser)" >> $GITHUB_STEP_SUMMARY

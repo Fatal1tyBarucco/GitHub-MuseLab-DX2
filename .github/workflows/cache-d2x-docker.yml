@@ -16,7 +16,7 @@ jobs:
   build-and-cache:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -33,6 +33,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Verify base image
+        id: verify-base
+        run: |
+          echo "Verifying base image availability..."
+          if docker pull salesforce/cli:2.50.0-full 2>/dev/null; then
+            echo "Base image available"
+            echo "base_image=salesforce/cli:2.50.0-full" >> $GITHUB_OUTPUT
+          else
+            echo "Warning: Base image not available, using latest"
+            echo "base_image=salesforce/cli:latest-full" >> $GITHUB_OUTPUT
+          fi
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
@@ -41,15 +53,27 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.image_tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            BASE_IMAGE=${{ steps.verify-base.outputs.base_image }}
 
-      - name: Update README
+      - name: Generate build summary
+        if: success()
         run: |
-          echo "## Latest D2X Image" > $GITHUB_JOB_SUMMARY
-          echo "Tag: ${{ github.event.inputs.image_tag }}" >> $GITHUB_JOB_SUMMARY
-          echo "Built on: $(date -u)" >> README.md >> $GITHUB_JOB_SUMMARY
+          echo "## ✅ Docker Build Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Tag:** \`${{ github.event.inputs.image_tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Image:** \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.image_tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Built on:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "**Base image:** ${{ steps.verify-base.outputs.base_image }}" >> $GITHUB_STEP_SUMMARY
 
-      - name: Commit README
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: 'README.md'
-          message: 'Update README with latest image info'
+      - name: Generate failure summary
+        if: failure()
+        run: |
+          echo "## ❌ Docker Build Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Please check the build logs for details." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Common issues:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Base image not available" >> $GITHUB_STEP_SUMMARY
+          echo "- Dockerfile syntax errors" >> $GITHUB_STEP_SUMMARY
+          echo "- Insufficient permissions" >> $GITHUB_STEP_SUMMARY
