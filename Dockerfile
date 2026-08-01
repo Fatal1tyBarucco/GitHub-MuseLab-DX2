@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
 
 # Install Python and basic tools
 RUN apt-get update && \
-    apt-get install -y python3-pip python3-venv && \
+    apt-get install -y python3-pip python3-venv git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -19,10 +19,12 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install CumulusCI using venv to avoid --break-system-packages
+# Install CumulusCI using venv
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
-RUN pip install --no-cache-dir git+https://github.com/muselab-d2x/CumulusCI@d2x cookiecutter
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir cookiecutter
+RUN pip install --no-cache-dir git+https://github.com/muselab-d2x/CumulusCI@d2x
 
 # Copy devhub auth script and make it executable
 COPY devhub.sh /usr/local/bin/devhub.sh
