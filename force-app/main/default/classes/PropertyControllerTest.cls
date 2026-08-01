@@ -3,7 +3,16 @@ public class PropertyControllerTest {
     
     @IsTest
     static void testFindAll() {
-        Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+        Property__c p = new Property__c(
+            Name='Test Property',
+            Title__c='Test Property',
+            City__c='Boston',
+            Price__c=200000,
+            Beds__c=3,
+            Baths__c=2,
+            Location__Latitude__s=-71.110448,
+            Location__Longitude__s=42.360642
+        );
         insert p;
         
         Test.startTest();
@@ -16,7 +25,16 @@ public class PropertyControllerTest {
 
     @IsTest
     static void testFindById() {
-        Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+        Property__c p = new Property__c(
+            Name='Test Property',
+            Title__c='Test Property',
+            City__c='Boston',
+            Price__c=200000,
+            Beds__c=3,
+            Baths__c=2,
+            Location__Latitude__s=-71.110448,
+            Location__Longitude__s=42.360642
+        );
         insert p;
         
         Test.startTest();
@@ -29,7 +47,17 @@ public class PropertyControllerTest {
 
     @IsTest
     static void testGetAvailableProperties() {
-        Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+        Property__c p = new Property__c(
+            Name='Test Property',
+            Title__c='Test Property',
+            City__c='Boston',
+            Price__c=200000,
+            Beds__c=3,
+            Baths__c=2,
+            Date_Listed__c=Date.today(),
+            Location__Latitude__s=-71.110448,
+            Location__Longitude__s=42.360642
+        );
         insert p;
         
         Test.startTest();
@@ -42,7 +70,16 @@ public class PropertyControllerTest {
 
     @IsTest
     static void testGetSimilarProperties() {
-        Property__c p = new Property__c(Location__Latitude__s=-71.110448, Location__Longitude__s=42.360642);
+        Property__c p = new Property__c(
+            Name='Test Property',
+            Title__c='Test Property',
+            City__c='Boston',
+            Price__c=200000,
+            Beds__c=3,
+            Baths__c=2,
+            Location__Latitude__s=-71.110448,
+            Location__Longitude__s=42.360642
+        );
         insert p;
         
         Test.startTest();
