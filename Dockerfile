@@ -3,29 +3,31 @@ FROM salesforce/cli:latest-full AS base
 
 LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
 
-# Install Python, pip, and GitHub CLI
+# Install Python and pip
 RUN apt-get update && apt-get upgrade -y && \
-  apt-get install -y python3-pip python3-venv curl gnupg && \
-  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg && \
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null && \
-  apt-get update && apt-get install -y gh && \
+  apt-get install -y python3-pip python3-venv && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Copy d2x source and install
+# Install d2x via pip
 COPY pyproject.toml /usr/local/d2x/
 COPY d2x /usr/local/d2x/d2x
 
 RUN cd /usr/local/d2x && \
-  pip install --no-cache-dir poetry-core && \
-  pip install --no-cache-dir .
+  pip install --break-system-packages --no-cache-dir .
 
-# Copy CumulusCI pyproject and install
-COPY pyproject.cci.toml /usr/local/cci/pyproject.toml
-
-RUN pip --no-cache-dir install \
+# Install CumulusCI and cookiecutter
+RUN pip install --break-system-packages --no-cache-dir \
   git+https://github.com/muselab-d2x/CumulusCI@1ae7db2af \
   cookiecutter \
   keyrings.alt
+
+# Install GitHub CLI
+RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | \
+  gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg && \
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | \
+  tee /etc/apt/sources.list.d/github-cli.list > /dev/null && \
+  apt-get update && apt-get install -y gh && \
+  apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copy devhub auth script
 COPY devhub.sh /usr/local/bin/devhub.sh
