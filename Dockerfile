@@ -20,11 +20,12 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | \
     rm -rf /var/lib/apt/lists/*
 
 # Install CumulusCI using venv
+# NOTE: Using official CumulusCI from PyPI (supports pydantic>=2)
+# The fork muselab-d2x/CumulusCI requires pydantic<2 which conflicts with d2x
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir cookiecutter
-RUN pip install --no-cache-dir git+https://github.com/muselab-d2x/CumulusCI@d2x
+RUN pip install --no-cache-dir cumulusci cookiecutter
 
 # Copy devhub auth script and make it executable
 COPY devhub.sh /usr/local/bin/devhub.sh
