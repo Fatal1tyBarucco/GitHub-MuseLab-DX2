@@ -20,7 +20,7 @@ click==8.1.7
     # via cookiecutter
 cookiecutter==2.6.0
     # via d2x (pyproject.toml)
-idna==3.15
+idna==3.18
     # via requests
 jinja2==3.1.6
     # via cookiecutter
