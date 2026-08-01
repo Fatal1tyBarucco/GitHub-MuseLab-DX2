@@ -7,7 +7,6 @@ on:
                 type: string
                 default: feature
         secrets:
-            # Either dev-hub-auth-url or dev-hub-username, dev-hub-client-id, and dev-hub-private-key are required
             dev-hub-auth-url:
                 required: false
             dev-hub-username:
@@ -51,30 +50,6 @@ jobs:
               id: auth-devhub
               run: /usr/local/bin/devhub.sh
 
-            - name: Validate DevHub Connection
-              run: |
-                echo "=== Validating DevHub Connection ==="
-                sf org display --target-org DevHub || {
-                  echo "❌ Failed to connect to DevHub"
-                  exit 1
-                }
-                echo "✅ DevHub connection validated"
-
-            - name: Set ${{ inputs.org }} org as default org
-              run: cci org default ${{ inputs.org }}
-
-            - name: Validate Scratch Org
-              run: |
-                echo "=== Validating Scratch Org ==="
-                cci org info ${{ inputs.org }} || {
-                  echo "❌ Failed to get org info"
-                  exit 1
-                }
-                echo "✅ Scratch org validated"
-
-            - name: Enable History Tracking
-              run: cci history enable
-
             - name: Run Feature Test
               id: feature-test
               run: |
@@ -83,22 +58,19 @@ jobs:
                 echo "Org: ${{ inputs.org }}"
                 echo "Flow: ci_feature"
                 echo ""
-                
-                cci flow run ci_feature --use-snapshots || {
+
+                cci flow run ci_feature || {
                   echo ""
                   echo "❌ Feature test failed!"
                   echo ""
                   echo "=== Error Information ==="
                   cci error info || true
                   echo ""
-                  echo "=== Org Information ==="
-                  cci org info ${{ inputs.org }} || true
-                  echo ""
-                  echo "=== Task List ==="
-                  cci task list || true
+                  echo "=== Org List ==="
+                  cci org list || true
                   exit 1
                 }
-                
+
                 echo ""
                 echo "✅ Feature test completed successfully"
 
