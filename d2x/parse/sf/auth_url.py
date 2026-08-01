@@ -73,7 +73,7 @@ def parse_sfdx_auth_url(auth_url: str) -> SalesforceOrgInfo:
     # Determine org type
     org_type: OrgType = OrgType.PRODUCTION
     if groups.get("org_suffix"):
-        org_type = OrgType(groups["org_suffix"])  # type: ignore
+        org_type = OrgType(str(groups["org_suffix"]))
     elif groups.get("sandbox_name"):
         org_type = OrgType.SANDBOX
 
@@ -97,9 +97,9 @@ def parse_sfdx_auth_url(auth_url: str) -> SalesforceOrgInfo:
         domain_type=domain_type,
         full_domain=groups["instance_url"],
         # Pod/Instance information
-        region=groups.get("region"),  # type: ignore
+        region=groups.get("region") or None,
         pod_number=groups.get("pod_number"),
-        pod_type=groups.get("pod_type"),  # type: ignore
+        pod_type=groups.get("pod_type") or None,
         # MyDomain information
         mydomain=groups.get("mydomain"),
         sandbox_name=groups.get("sandbox_name"),

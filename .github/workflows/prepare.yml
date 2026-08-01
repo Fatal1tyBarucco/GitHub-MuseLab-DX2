@@ -71,7 +71,7 @@ jobs:
 
             - name: Cache Docker images
               id: cache-docker
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               with:
                   path: /tmp/.docker-cache
                   key: ${{ runner.os }}-docker-${{ steps.set_vars.outputs.full_image_name }}
@@ -123,7 +123,7 @@ jobs:
                   fi
 
             - name: Upload Docker Prep Info Artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: docker-prep-info
                   path: docker_prep_info.json

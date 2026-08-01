@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import Literal
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from rich.console import Console
 
 
@@ -29,8 +29,7 @@ class CLIOptions(BaseModel):
         default_factory=Console, description="Rich Console for output."
     )
 
-    class Config:
-        arbitrary_types_allowed = True
+    model_config = ConfigDict(arbitrary_types_allowed=True)
 
 
 # Add other enums and types as needed

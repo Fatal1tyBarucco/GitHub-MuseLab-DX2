@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict
 from rich.table import Table
 from typing import Optional
 from datetime import datetime, timedelta
@@ -7,18 +7,19 @@ from datetime import datetime, timedelta
 class CommonBaseModel(BaseModel):
     """Common base class for all models"""
 
-    class Config:
-        from_attributes = True
-        populate_by_name = True
-        use_enum_values = True
+    model_config = ConfigDict(
+        from_attributes=True,
+        populate_by_name=True,
+        use_enum_values=True,
+    )
 
     def to_dict(self):
         """Convert model to dictionary"""
-        return self.dict(by_alias=True)
+        return self.model_dump(by_alias=True)
 
     def to_json(self):
         """Convert model to JSON string"""
-        return self.json(by_alias=True)
+        return self.model_dump_json(by_alias=True)
 
     def to_yaml(self):
         """Convert model to YAML string"""
@@ -28,7 +29,7 @@ class CommonBaseModel(BaseModel):
             raise ImportError(
                 "PyYAML is not installed. Please install it to use this method."
             )
-        return yaml.dump(self.dict(by_alias=True))
+        return yaml.dump(self.model_dump(by_alias=True))
 
     @classmethod
     def from_yaml(cls, yaml_str: str):
@@ -54,4 +55,4 @@ class CommonBaseModel(BaseModel):
 
     def to_openapi_schema(self):
         """Convert model to OpenAPI 3.1 schema"""
-        return self.schema_json(by_alias=True)
+        return self.model_json_schema()

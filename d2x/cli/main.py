@@ -2,7 +2,6 @@ import rich_click as click
 from d2x.auth.sf.login_url import main as login_url_main
 from d2x.auth.sf.auth_url import main as auth_url_main
 import sys
-import pdb
 from d2x.base.types import OutputFormat, OutputFormatType, CLIOptions
 from typing import Optional
 
@@ -39,8 +38,9 @@ def login_url(ctx, output_format: OutputFormatType, debug: bool):
     ctx.obj["CLI_OPTIONS"] = cli_options
     try:
         login_url_main(cli_options)
-    except:
+    except Exception:
         if cli_options.debug:
+            import pdb
             type, value, tb = sys.exc_info()
             pdb.post_mortem(tb)
         else:
@@ -56,8 +56,9 @@ def auth_url(ctx, output_format: OutputFormatType, debug: bool):
     ctx.obj["CLI_OPTIONS"] = cli_options
     try:
         auth_url_main(cli_options)
-    except:
+    except Exception:
         if cli_options.debug:
+            import pdb
             type, value, tb = sys.exc_info()
             pdb.post_mortem(tb)
         else:
