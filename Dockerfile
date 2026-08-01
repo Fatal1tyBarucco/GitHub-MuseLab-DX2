@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
 
 # Install Python and basic tools
 RUN apt-get update && \
-    apt-get install -y python3-pip python3-venv git && \
+    apt-get install -y python3-pip python3-venv python3-full git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
