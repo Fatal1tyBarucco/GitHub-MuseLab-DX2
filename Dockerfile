@@ -16,6 +16,7 @@ COPY pyproject.toml /usr/local/d2x/
 COPY d2x /usr/local/d2x/d2x
 
 RUN cd /usr/local/d2x && \
+  pip install --no-cache-dir poetry-core && \
   pip install --no-cache-dir .
 
 # Copy CumulusCI pyproject and install
