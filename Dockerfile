@@ -3,83 +3,56 @@ FROM salesforce/cli:latest-full AS base
 
 LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
 
-# Install Python, Poetry, and GitHub CLI
-RUN apt-get update && apt-get upgrade -y && apt-get install -y python3-pip curl gnupg && \
-  curl -sSL https://install.python-poetry.org | python3 - && \
-  echo "export PATH=$HOME/.local/bin:$PATH" >> /root/.bashrc && \
+# Install Python, pip, and GitHub CLI
+RUN apt-get update && apt-get upgrade -y && \
+  apt-get install -y python3-pip python3-venv curl gnupg && \
   curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg && \
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null && \
-  apt-get update && apt-get install -y gh
+  apt-get update && apt-get install -y gh && \
+  apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Ensure Poetry is in the PATH
-ENV PATH="/root/.local/bin:$PATH"
+# Copy d2x source and install
+COPY pyproject.toml requirements.txt /usr/local/d2x/
+COPY d2x /usr/local/d2x/d2x
 
-# Copy d2x and CumulusCI pyproject.toml files
-COPY pyproject.toml poetry.lock /usr/local/d2x/
+RUN cd /usr/local/d2x && \
+  pip install --no-cache-dir -r requirements.txt && \
+  pip install --no-cache-dir .
+
+# Copy CumulusCI pyproject and install
 COPY pyproject.cci.toml /usr/local/cci/pyproject.toml
 
-# Copy d2x source code
-COPY d2x /usr/local/d2x
+RUN pip --no-cache-dir install \
+  git+https://github.com/muselab-d2x/CumulusCI@1ae7db2af \
+  cookiecutter \
+  keyrings.alt
 
-# Set up d2x environment
-RUN cd /usr/local/d2x && \
-  poetry install
-
-# Set up CumulusCI environment
-RUN cd /usr/local/cci && \
-  poetry install
-
-# Install CumulusCI and other Python packages
-RUN pip --no-cache-dir install git+https://github.com/muselab-d2x/CumulusCI@1ae7db2af cookiecutter keyrings.alt
-
-# Copy devhub auth script and make it executable
+# Copy devhub auth script
 COPY devhub.sh /usr/local/bin/devhub.sh
 RUN chmod +x /usr/local/bin/devhub.sh
 
 # Create d2x user
 RUN useradd -r -m -s /bin/bash -c "D2X User" d2x
 
-# Set up PATH for both environments
-ENV PATH="/usr/local/d2x/.venv/bin:/usr/local/cci/.venv/bin:$PATH"
+# Set up PATH
+ENV PATH="/root/.local/bin:$PATH"
+RUN echo 'export PATH=~/.local/bin:$PATH' >> /root/.bashrc && \
+  echo 'export PATH=~/.local/bin:$PATH' >> /home/d2x/.bashrc && \
+  echo '/usr/local/bin/devhub.sh' >> /root/.bashrc && \
+  echo '/usr/local/bin/devhub.sh' >> /home/d2x/.bashrc
 
-# Create a script to activate the cci environment
-RUN echo '#!/bin/bash\nsource /usr/local/cci/.venv/bin/activate\nexec "$@"' > /usr/local/bin/activate_cci && \
-  chmod +x /usr/local/bin/activate_cci
-
-# Set the default entrypoint to activate the cci environment
-ENTRYPOINT ["/usr/local/bin/activate_cci"]
-
-# Verify installations
+# Verify installation
 RUN cci version
 
-# Stage for ChromeDriver
-FROM base AS chromedriver
-
-# Install ChromeDriver
-RUN apt-get install -y wget unzip && \
-  wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip && \
-  unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
-  rm /tmp/chromedriver.zip
-
-# Stage for Playwright
-FROM base AS playwright
-
-# Install Playwright
-RUN npm install -g playwright && \
-  npx playwright install
-
-# Stage for full browser support (ChromeDriver + Playwright)
+# Stage for full browser support
 FROM base AS browser
 
-# Install ChromeDriver
-RUN apt-get install -y wget unzip && \
-  wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip && \
-  unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
-  rm /tmp/chromedriver.zip
-
-# Install Playwright
-RUN cci robot install_playwright && \
-  npx playwright install-deps
+RUN apt-get update && apt-get install -y wget unzip && \
+  wget -O /tmp/chromedriver.zip \
+    https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip && \
+  unzip /tmp/chromedriver.zip -d /usr/local/bin/ && rm /tmp/chromedriver.zip && \
+  cci robot install_playwright && npx playwright install-deps && \
+  apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Final stage for no browser automation support
 FROM base AS no-browser
