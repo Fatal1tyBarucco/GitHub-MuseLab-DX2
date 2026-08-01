@@ -1,5 +1,5 @@
 # Base stage
-FROM salesforce/cli:latest-full AS base
+FROM salesforce/cli:latest AS base
 
 LABEL org.opencontainers.image.source="https://github.com/muselab-d2x/d2x"
 
