@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="BinanceAPI">
 
     <aura:attribute name="opMercado" type="Boolean" default="true" />
@@ -31,21 +30,3 @@
         </div>
     </lightning:card>
 </aura:component>
-=======
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
-	<lightning:card title="Negociar">
-		<lightning:tabset>
-			<lightning:tab label="Compra">
-				<div class="slds-box slds-box_x-small">
-					Código de Compra
-				</div>
-			</lightning:tab>
-			<lightning:tab label="Venda">
-				<div class="slds-box slds-box_x-small">
-					Código de Venda
-				</div>
-			</lightning:tab>
-		</lightning:tabset>
-	</lightning:card>
-</aura:component>	
->>>>>>> 69eef3dda825b51f3fd38654b8a8a11bcca3ebd6
