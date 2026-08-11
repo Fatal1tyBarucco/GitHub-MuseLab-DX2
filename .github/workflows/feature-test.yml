@@ -50,6 +50,9 @@ jobs:
               id: auth-devhub
               run: /usr/local/bin/devhub.sh
 
+            - name: Set default org
+              run: cci org default ${{ inputs.org }} || true
+
             - name: Run Feature Test
               id: feature-test
               run: |
