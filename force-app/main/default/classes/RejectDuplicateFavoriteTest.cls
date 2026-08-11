@@ -53,7 +53,7 @@ public class RejectDuplicateFavoriteTest {
             insert f2;
             System.assert(false, 'Should have thrown exception for duplicate');
         } catch (DmlException e) {
-            System.assert(e.getMessage().contains('DUPLICATE_VALUE'), 'Should throw duplicate error');
+            System.assert(e.getMessage().contains('duplicate'), 'Should throw duplicate error');
         }
         Test.stopTest();
     }

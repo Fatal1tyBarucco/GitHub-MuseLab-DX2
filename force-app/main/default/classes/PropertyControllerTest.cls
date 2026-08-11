@@ -20,7 +20,7 @@ public class PropertyControllerTest {
         Test.stopTest();
         
         System.assert(r != null, 'Result should not be null');
-        System.assert(r.records.size() > 0, 'Should return at least one property');
+        System.assert(r.properties.size() > 0, 'Should return at least one property');
     }
 
     @IsTest
