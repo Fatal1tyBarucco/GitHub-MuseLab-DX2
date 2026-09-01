@@ -20,7 +20,7 @@ click==8.1.7
     # via cookiecutter
 cookiecutter==2.6.0
     # via d2x (pyproject.toml)
-idna==3.18
+idna==3.19
     # via requests
 jinja2==3.1.6
     # via cookiecutter
@@ -42,7 +42,7 @@ python-slugify==8.0.4
     # via cookiecutter
 pyyaml==6.0.2
     # via cookiecutter
-requests==2.33.0
+requests==2.34.2
     # via
     #   cookiecutter
     #   d2x (pyproject.toml)
