@@ -20,7 +20,7 @@ click==8.1.7
     # via cookiecutter
 cookiecutter==2.6.0
     # via d2x (pyproject.toml)
-idna==3.19
+idna==3.20
     # via requests
 jinja2==3.1.6
     # via cookiecutter
@@ -34,7 +34,7 @@ pydantic==2.9.2
     # via d2x (pyproject.toml)
 pydantic-core==2.23.4
     # via pydantic
-pygments==2.18.0
+pygments==2.20.0
     # via rich
 python-dateutil==2.9.0.post0
     # via arrow
@@ -60,5 +60,5 @@ typing-extensions==4.12.2
     # via
     #   pydantic
     #   pydantic-core
-urllib3==2.7.0
+urllib3==2.8.0
     # via requests
